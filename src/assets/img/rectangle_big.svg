@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6008px" height="64px" viewBox="0 0 6008 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="2.77555756e-13 0 6000 0 6000 56 2824.50488 56 2816.53671 47.890625 2808.54199 56 0 56"></polygon>
+        <filter x="-0.1%" y="-8.9%" width="100.2%" height="125.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.08 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Rectangle" transform="translate(4.000000, 2.000000)">
+            <g id="path-1-link" fill="black" fill-opacity="1">
+                <g id="path-1">
+                    <use filter="url(#filter-2)" xlink:href="#path-1"></use>
+                </g>
+            </g>
+            <g id="path-1-link" fill="#FFFFFF">
+                <polygon id="path-1" points="0 0 2800.47882 0 4369.0471 0 6000 0 6000 56 2824.50488 56 2816.53671 47.890625 2808.54199 56 0 56"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

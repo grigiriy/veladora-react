@@ -1,0 +1,13 @@
+footer{
+    justify-content: center;
+    z-index: 1000;
+}
+.coords{
+    position: absolute;
+    color: #fff;
+    padding: 30px 20px;
+    left: 0;
+}
+footer a{
+    padding: 30px 25px;
+}

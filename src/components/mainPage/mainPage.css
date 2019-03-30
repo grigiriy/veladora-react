@@ -1,0 +1,41 @@
+.index-block{
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-between;
+}
+.main-screen {
+    min-height: calc(100vh - 20px);
+    background-size: cover;
+}
+.logo,
+.item{
+    text-align: center;
+}
+.item:first-child{
+    border-left: solid 1px #eeeeee4d;
+}
+.title p{
+    font-family: BerlingskeSerif;
+    font-size: 36px;
+    line-height: 1.78;
+    text-align: center;
+    color: #fff;
+}
+.subtitle{
+    opacity: 0;
+    transition: all 0.5s;
+}
+.item:hover .subtitle{
+    opacity: 1;
+}
+.subtitle p{
+    font-family: ApercuPro;
+    font-size: 17px;
+    line-height: 1.53;
+    max-width: 200px;
+    color: #fff;
+    margin: 0 auto 10px;
+}
+.subtitle img{
+    max-width: 20px;
+}
