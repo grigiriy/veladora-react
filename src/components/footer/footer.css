@@ -1,12 +1,16 @@
 footer{
     justify-content: center;
     z-index: 1000;
+    bottom: 0;
+    position: relative;
 }
 .coords{
     position: absolute;
     color: #fff;
     padding: 30px 20px;
     left: 0;
+    margin-bottom: 0;
+    margin-block-end: 0;
 }
 footer a{
     padding: 30px 25px;

@@ -1,0 +1,11 @@
+.map-label {
+    position: relative;
+    bottom: 0px;
+    z-index: 999;
+    /* top: 100%; */
+    background: #fff;
+    height: 500px;
+    width: 45vw;
+    padding: 80px;
+    margin-top: -500px;
+}

@@ -1,0 +1,40 @@
+.menu-text .text-block{
+    padding: 20% 5%;
+    justify-content: flex-start;
+}
+.menu-toggle {
+    height: 13px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #000;
+    opacity: 0.5;
+    text-transform: uppercase;
+    cursor: pointer;
+    line-height: 0.1em;
+    font-weight: bolder;
+    margin: 10px;
+    transition: all 0.1s;
+    border-bottom: solid 1px #c7c7c7;
+}
+.menu-toggle.active {
+    opacity: 1;
+    border-bottom: none;
+}
+.menu-item {
+    justify-content: space-between;
+    height: 60px;
+    box-shadow: 0 1px 0 0 #f2f2f2;
+}
+._vg {
+    white-space: nowrap;
+    padding-left: 15px;
+}
+.menu-item span:last-child {
+    opacity: 0.4;
+}
+.menuTitle{
+    margin-bottom: 10px
+}
+.menuSubtitle{
+    margin-bottom: 55px;
+}

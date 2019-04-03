@@ -10,12 +10,11 @@ import  './footer.css';
 class Footer extends Component {
     state = {
         page: 'index',
-        lang: 'En',
     };
 
     render() {
-        return <footer class="footer d-flex w-100 index-footer">
-            <p class="coords">Pokrovka, 2/1-1, Moscow</p>
+        return <footer className="footer d-flex w-100 index-footer" style={{ background: '#000'}}>
+            <p className="coords">Pokrovka, 2/1-1, Moscow</p>
             <Link to="https://t.me/tacosytragos" target="_blank">
                 <img src={telegram} alt="telegram" />
             </Link>

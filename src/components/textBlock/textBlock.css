@@ -1,0 +1,49 @@
+.v-center{
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+.text-block {
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 5%;
+    height: 100%;
+}
+.text-block.h-480 {
+    height: 480px;
+    max-width: 650px;
+}
+.label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 4.4px;
+    color: #333;
+    padding-bottom: 4px;
+}
+.read-more,
+#add_text {
+    /* position: absolute; */
+    height: 0;
+}
+.read-more {
+    /* top: 27rem; */
+    transition: all 0.5s;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+/* .tacos .read-more {
+    top: 24rem;
+} */
+.read-more span {
+    /* position: absolute;
+    width: 100px; */
+    line-height: 1.7em;
+    padding-left: 5px;
+    opacity: 0.5;
+    transition: all 0.2s;
+}
+.read-more:hover span {
+    opacity: 1;
+}

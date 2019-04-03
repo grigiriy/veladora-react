@@ -25,10 +25,10 @@ class MainPage extends Component {
                         <img src={logo} alt="veladora" />
                     </Col>
                     <Col>
-                        <Item />
+                        <Item page={'tacos'}/>
                     </Col>
                     <Col>
-                        <Item />
+                        <Item page={'cantina'}/>
                     </Col>
                 </Row>
             <Footer />

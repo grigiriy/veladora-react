@@ -1,15 +1,32 @@
 import React, { Component } from 'react';
-import MainPage from './components/mainPage';
 import Container from 'react-bootstrap/Container';
-import { BrowserRouter, Route } from "react-router-dom"
+import { Switch } from 'react-router';
+import { BrowserRouter, Route } from "react-router-dom";
+
+import MainPage from './components/MainPage';
+import Tacos from './components/Tacos';
+import Cantina from './components/Cantina';
+import Footer from './components/footer';
 
 class App extends Component {
+
+  state = {
+        page:'unset yet',
+  }
+
   render() {
-    return <BrowserRouter>
-          <Container fluid="true" className="App" style={{border: 'solid #fff 10px'}}>
-              <MainPage />
+    return (
+        <BrowserRouter>
+          <Container fluid="true" className="App" style={this.state.page === 'index' ? {border: 'solid #fff 10px'} : {} }>
+              <Switch>
+                  <Route path='/' exact component={MainPage} />
+                  <Route path='/tacos' exact component={Tacos} />
+                  <Route path='/cantina' exact component={Cantina} />
+              </Switch>
           </Container>
+          <Footer />
       </BrowserRouter>
+     )
   }
 }
 

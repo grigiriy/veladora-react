@@ -1,0 +1,41 @@
+.carousel-indicators {
+    margin-bottom: 32px;
+    z-index: 100;
+}
+.carousel-indicators li {
+    border: solid 1px transparent;
+    border-radius: 3px;
+    height: 4px;
+}
+.carousel-indicators._secondary li {
+    background-color: #fff;
+    width: 0;
+    margin-right: 33px;
+}
+.carousel-indicators._secondary li.active {
+    width: 30px;
+    margin-right: 3px;
+    opacity: 1;
+    transition-property: width,margin;
+    transition-duration: 1s;
+}
+.carousel-inner{
+    height: calc(100vh - 48px);
+    max-height: calc(100vh - 48px);
+    overflow: hidden;
+    width: 50vw;
+}
+.carousel-item > div.d-block {
+    height: 100vh;
+    /* width: 50vw; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.carousel-control-next, .carousel-control-prev {
+    width: 50% !important;
+    cursor: url(../../assets/img/arrow-next.png), auto;
+}
+.carousel-control-prev {
+    cursor: url(../../assets/img/arrow-prev.png), auto;
+}
