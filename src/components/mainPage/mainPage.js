@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import {Row, Col} from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import Footer from '../footer';
 
 import Item from './item';
-import Footer from '../footer';
 
 import  './mainPage.css';
 
@@ -14,27 +15,42 @@ import back from '../../assets/img/main_back.png';
 class MainPage extends Component {
     state = {
         back: 'back',
+        loaded: false,
     };
 
+
     render() {
-        return <>
-        <Row className="main-screen">
-            <Col className="index-block d-flex pt-5" style={{backgroundImage: 'url(' + back + ')' }}>
-                <Row>
-                    <Col md={12} className="logo mx-auto py-5">
-                        <img src={logo} alt="veladora" />
-                    </Col>
-                    <Col>
-                        <Item page={'tacos'}/>
-                    </Col>
-                    <Col>
-                        <Item page={'cantina'}/>
+        return   <>
+        <ReactCSSTransitionGroup
+            transitionName="anim"
+            transitionAppear={true}
+            transitionAppearTimeout={3000}
+            transitionEnter={false}
+            transitionLeave={false}
+        >
+            <Container fluid="true" className="main-screen" style={{backgroundImage: 'url(' + back + ')' }} />
+            <Container fluid="true" >
+                <Row className="inner-screen">
+                    <Col className="index-block d-flex pt-5" >
+                        <Row>
+                            <Col md={12} className="logo mx-auto py-5">
+                                <img src={logo} alt="veladora" />
+                            </Col>
+                            <Col>
+                                <Item page={'tacos'}/>
+                            </Col>
+                            <Col>
+                                <Item page={'cantina'}/>
+                            </Col>
+                        </Row>
+                        <Footer page={'index'}/>
                     </Col>
                 </Row>
-            <Footer />
-            </Col>
-        </Row>
-        </>
+            </Container>
+            <span className="bordAbs"/>
+        </ReactCSSTransitionGroup>
+    </>
     }
 }
-export default MainPage
+
+export default MainPage;

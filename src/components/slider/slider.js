@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
 import {Row, Carousel} from 'react-bootstrap';
-
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import  './slider.css';
-
-import img from '../../assets/img/tacos_first_block.png';
 
 class Slider extends Component {
 
     state = {
+        firstScreen: this.props
     };
 
     render() {
@@ -19,6 +16,13 @@ class Slider extends Component {
         console.log(slide);
 
         return <Row>
+            <ReactCSSTransitionGroup
+                transitionName="slider"
+                transitionAppear={this.state.firstScreen ? true : false }
+                transitionAppearTimeout={100}
+                transitionEnter={false}
+                transitionLeave={false}
+            >
                 <Carousel
                     nextIcon={<span></span>}
                     prevIcon={<span></span>}
@@ -36,7 +40,8 @@ class Slider extends Component {
                       <div className="d-block w-100" style={{backgroundImage: 'url(' + slide[2] + ')' }}></div>
                     </Carousel.Item>
                 </Carousel>
-            </Row>
+            </ReactCSSTransitionGroup>
+        </Row>
     }
 }
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Row, Col} from 'react-bootstrap';
 
 import Header from '../header';
+import Footer from '../footer';
 import TextBlock from '../textBlock';
 import Slider from '../slider';
 import Menu from '../menu';
@@ -25,10 +26,10 @@ class Tacos extends Component {
         <Header page={this.state.page}/>
             <Row className="screen pt-5">
                 <Col>
-                    <Slider slider={slider_1}/>
+                    <Slider slider={slider_1} firstScreen={true}/>
                 </Col>
                 <Col>
-                    <TextBlock content={first_block}/>
+                    <TextBlock content={first_block} firstScreen={true}/>
                 </Col>
             </Row>
 
@@ -41,6 +42,7 @@ class Tacos extends Component {
                 </Col>
             </Row>
             <Map />
+            <Footer />
         </>
     }
 }

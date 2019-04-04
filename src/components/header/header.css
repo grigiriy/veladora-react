@@ -8,6 +8,7 @@
     background-position-y: -2px;
     background-position-x: -10px;
     padding-top: 0;
+    left: 0;
 }
 .nav.navbar.tacos{
     background-position-x: calc(50% + 200px);
@@ -44,4 +45,13 @@
 }
 .nav.tacos .nav-book{
     visibility: hidden;
+}
+/* === */
+.header-appear .nav{
+  margin-top:-50px;
+  transition: all 1s;
+}
+/* === */
+.header-appear.header-appear-active .nav{
+  margin-top: 0;
 }

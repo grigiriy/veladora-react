@@ -21,10 +21,24 @@
     color: #333;
     padding-bottom: 4px;
 }
-.read-more,
 #add_text {
     /* position: absolute; */
-    height: 0;
+    /* height: 0; */
+    opacity: 0;
+    transition: all 0.5s;
+}
+#add_text.shown{
+    opacity: 1;
+    transition: all 2s;
+}
+#add_text p{
+    margin-top: -90px;
+    transition: all 1s;
+    transform:scale(1, 0.7);
+}
+#add_text.shown p{
+    margin-top: 0px;
+    transform:scale(1, 1);
 }
 .read-more {
     /* top: 27rem; */
@@ -46,4 +60,24 @@
 }
 .read-more:hover span {
     opacity: 1;
+}
+.read-more img {
+    transition: all 0.2s;
+}
+.read-more img.rotated {
+    transform: rotate(180deg);
+}
+
+/* === */
+._an{
+  transition: all 1s ease;
+}
+ .text-appear ._an{
+  padding-top: 40px;
+  opacity: 0;
+}
+/* === */
+ .text-appear.header-appear-active ._an{
+  padding-top: 0;
+  opacity: 1;
 }

@@ -4,29 +4,45 @@
     justify-content: space-between;
 }
 .main-screen {
-    min-height: calc(100vh - 20px);
     background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.inner-screen{
+    min-height: calc(100vh - 20px);
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease-in;
 }
 .logo,
 .item{
     text-align: center;
 }
-.item:first-child{
-    border-left: solid 1px #eeeeee4d;
+/* .item.tacos{
+    border-right: solid 1px #eeeeee4d;
+} */
+.title,
+.title p>span{
+    transition: all 0.5s;
 }
-.title p{
+.title p,
+.title p>span{
     font-family: BerlingskeSerif;
     font-size: 36px;
     line-height: 1.78;
     text-align: center;
     color: #fff;
 }
-.subtitle{
-    opacity: 0;
-    transition: all 0.5s;
+.title p>span{
+    border-bottom: solid 1px #777;
 }
-.item:hover .subtitle{
-    opacity: 1;
+.subtitle{
+    opacity: 0!important;
+    font-size: 0;
+    transition: all 0.5s;
 }
 .subtitle p{
     font-family: ApercuPro;
@@ -38,4 +54,79 @@
 }
 .subtitle img{
     max-width: 20px;
+}
+.item:hover .title {
+    margin-top: -40px;
+}
+.item:hover .title p>span{
+    font-size: 48px;
+}
+.item:hover .subtitle{
+    opacity: 1!important;;
+}
+.index-footer .coords{
+    margin-right: auto;
+    position: static;
+}
+.index-footer a{
+    padding: 30px 15px;
+}
+.index-footer a:last-child{
+    padding-right: 25px;
+}
+/* ============ */
+body{
+    /* background:#000; */
+    overflow-x: hidden;
+}
+.main-screen{
+    opacity: 1;
+    transition: all 1s ease-in;
+    transform: scale(1.02);
+}
+.bordAbs{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: solid 20px #fff;
+    transition: all 1s ease-in-out;
+    top:0;
+    opacity: 1!important;
+}
+/* === */
+.anim-appear{
+  opacity: 0.01;
+}
+.anim-appear div{
+    transition: all 0.5s ease-in;
+     opacity: 0.01;
+}
+.anim-appear .item{
+    transition: all 1s ease-in;
+    margin-top: 10px;
+}
+.anim-appear .logo{
+    transition: all 0.7s ease-in;
+    margin-top: 30px;
+}
+.anim-appear.bordAbs{
+    border: solid 0px #fff;
+}
+.anim-appear.main-screen{
+    transform: scale(1.00);
+}
+/* === */
+.anim-appear.anim-appear-active,
+.anim-appear.anim-appear-active div{
+  opacity: 1;
+}
+.anim-appear.anim-appear-active .item,
+.anim-appear.anim-appear-active .logo{
+  margin-top: 0;
+}
+.anim-appear.anim-appear-active.bordAbs{
+    border: solid 20px #fff;
+}
+.anim-appear.anim-appear-active.main-screen{
+    transform: scale(1.02);
 }

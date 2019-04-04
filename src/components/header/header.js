@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import {Nav,Row} from 'react-bootstrap';
-// import { connect } from 'react-redux';
-// import { createStore, bindActionCreators } from 'redux';
-
-// import {changeLang, changePage, changeView} from '../../store/actions';
-// import rootReducer from '../../store/reducers';
-
 import logo from '../../assets/img/logo_vela.svg';
 import logo_text from '../../assets/img/logo_font.svg';
-
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import  './header.css';
-
 
 class Header extends Component {
     state = {
@@ -24,28 +17,19 @@ class Header extends Component {
     langToggle = () => {
         this.state.lang === 'En' ? this.setState({lang: 'Ru'}) : this.setState({lang: 'En'});
     }
-    // changePage = () => {
-    //     this.state.page === 'cantina' ? this.setState({page: 'tacos'}) : this.setState({page: 'cantina'});
-    //     alert(this.state.page);
-    // }
-
-// mobileCheck() {
-//     let cw = window.innerWidth;
-//     cw < 769 ? this.setState({mobile: 'true'}) : this.setState({mobile: 'false'}) ;
-// }
-//
-// componentDidMount() {
-//     this.mobileCheck();
-// }
-
 
     render() {
-
     const { lang } = this.state;
     const page = this.state.page;
 
-
         return <header >
+        <ReactCSSTransitionGroup
+            transitionName="header"
+            transitionAppear={true}
+            transitionAppearTimeout={100}
+            transitionEnter={false}
+            transitionLeave={false}
+        >
         <Row>
             <Nav className={"navbar w-100 d-flex " + page }>
                 <div className="logo-pic">
@@ -72,27 +56,8 @@ class Header extends Component {
                 <Link className={"nav-link " + (page === 'cantina' ? 'active' : '')} to="/cantina">Cantina</Link>
             </div>
         </Row>
+    </ReactCSSTransitionGroup>
     </header>
     }
 }
-
-
-// const mapStateToProps = (state) => {
-//     console.log(state);
-// 	return{
-//         page: state.page,
-//         lang: state.lang,
-//         mobile: state.mobile,
-// 	}
-// }
-//
-// const mapDispatchToProps = (dispatch) => {
-// 	return {
-//         changePage: bindActionCreators(changePage, dispatch),
-//         changeLang: bindActionCreators(changeLang, dispatch),
-//         changeView: bindActionCreators(changeView, dispatch),
-// 	}
-//   }
-//
-// export default connect(mapStateToProps, mapDispatchToProps)(Header);
 export default Header;
