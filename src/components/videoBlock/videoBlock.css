@@ -57,8 +57,18 @@
 .video-card--preview img {
     max-width: 100%;
 }
+.video-card--preview:hover {
+    margin-top: -1px;
+    padding: 0;
+}
 .video-card--preview img.onHover {
     display: none;
+}
+.video-card--preview:hover img.offHover {
+    display: none;
+}
+.video-card--preview:hover img.onHover {
+    display: block;
 }
 .video-card--excerpt {
     margin-top: auto;

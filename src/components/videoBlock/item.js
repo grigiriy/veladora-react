@@ -8,15 +8,12 @@ import img_hov from '../../assets/img/gif_1.gif';
 
 class Item extends Component {
     state = {
-        video1: '0',
-        video2: '0',
-        video3: '0',
-        video4: '0',
-        popup: 'false'
+        video: 0,
+        popup: false,
+        hover: false,
     };
-
+    
     render() {
-
         const { date } = this.props.video;
         const { name } = this.props.video;
         const { preview } = this.props.video;

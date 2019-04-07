@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import {Row, Col, Dropdown} from 'react-bootstrap';
 
 import  './book.css';
@@ -8,12 +7,29 @@ import img from '../../assets/img/second_block.png';
 
 class TextBlock extends Component {
     state = {
-        sent: 'false',
+        sent: false,
+        sticky: false
     };
 
+    handleSticky = event => {
+        let startSticky = document.getElementById('book').offsetTop;
+        let endSticky = document.getElementById('menu').offsetTop;
+        (window.scrollY > startSticky && window.scrollY < endSticky) ? this.setState({sticky: true}) : this.setState({sticky: false});
+    }
+
+    // Init
+	componentDidMount() {
+		window.addEventListener('scroll', this.handleSticky);
+		this.handleSticky();
+	}
+	componentWillUnmount() {
+		window.removeEventListener('scroll', this.handleSticky);
+	}
+
     render() {
+        const sticky = this.state.sticky ? 'b-sticky' : '';
         return <>
-        <Row id="book" className="screen book-screen">
+        <Row id="book" className={"screen book-screen " + sticky}>
             <Col col={12} className="mobile mobile_book_pic">
                 <img src={img} alt="" style={{maxWidth:'100%'}} />
             </Col>

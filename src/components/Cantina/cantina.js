@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Row, Col} from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 import Header from '../header';
 import Footer from '../footer';
@@ -12,11 +12,10 @@ import Map from '../map';
 
 import Content from  './content.js';
 
-
 class Cantina extends Component {
     state = {
         back: 'back',
-        page:'cantina',
+        page: 'cantina',
     };
 
     render() {

@@ -43,11 +43,11 @@ class TextBlock extends Component {
                         <p className="label _an">{ label }</p>
                         <h1 className="_an">{ title }</h1>
                         <p className="_an">{ text }</p>
-                        <div className={ this.state.expanded && _shown } id="add_text">
+                        <div className={ this.state.expanded ? _shown : '' } id="add_text">
                             <p >{ more }</p>
                         </div>
                         <Link className="_an read-more" to="#success" id="readMore_outline">
-                            <img src={img} alt="..." className={ this.state.expanded && _rotated }/>
+                            <img src={img} alt="..." className={ this.state.expanded ? _rotated : '' }/>
                             <span onClick={() => this.toggleReadMore()}>{ !this.state.expanded ? _opened : _closed }</span>
                         </Link>
                     </span>

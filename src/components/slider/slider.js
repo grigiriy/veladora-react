@@ -13,9 +13,7 @@ class Slider extends Component {
 
         const slide = this.props.slider;
 
-        console.log(slide);
-
-        return <Row>
+        return <Row className="sticky">
             <ReactCSSTransitionGroup
                 transitionName="slider"
                 transitionAppear={this.state.firstScreen ? true : false }

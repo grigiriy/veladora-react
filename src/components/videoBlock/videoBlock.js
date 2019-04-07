@@ -8,7 +8,15 @@ import circle from '../../assets/img/circle-logo.png';
 
 class VideoBlock extends Component {
     state = {
+        rotate: 0
     };
+
+    componentDidMount() {
+        let self = this;
+        setInterval(function(){
+            self.setState({rotate: self.state.rotate + 1})
+        }, 50);
+	}
 
     render() {
 
@@ -27,7 +35,7 @@ class VideoBlock extends Component {
                     </h2>
                     <p>На кухню бара Veladora продолжают приезжать шеф-повара из Мексики и показывать москвичам традиционную кухню и новые ингредиенты.</p>
                 </div>
-                <div className="circle-logo desktop"><img src={circle} alt="" /></div>
+                <div className="circle-logo desktop"><img src={circle} alt="" style={{ transform: "rotate(" + this.state.rotate + "deg)" }}/></div>
             </Col>
             <Col md={7} className="video">
                 <div className="wrapper d-flex text-block">

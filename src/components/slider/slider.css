@@ -52,3 +52,8 @@
 .carousel-control-prev {
     cursor: url(../../assets/img/arrow-prev.png), auto;
 }
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 56px;
+}
