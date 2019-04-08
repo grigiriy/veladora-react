@@ -1,6 +1,6 @@
 .nav.navbar{
     position: fixed;
-    z-index: 1000;
+    z-index: 1051;
     height: 62px;
     padding-bottom: 0px;
     background-image: url(../../assets/img/rectangle_big.svg);
