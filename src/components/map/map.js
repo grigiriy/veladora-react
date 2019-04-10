@@ -1,18 +1,49 @@
 import React, { Component } from 'react';
-import {Row} from 'react-bootstrap';
+import ReactMapboxGl, { Marker, ZoomControl } from "react-mapbox-gl";
+import { Row } from 'react-bootstrap';
 
 import  './map.css';
 
+import image from '../../assets/img/mapPinter.svg';
 
-class Map extends Component {
+const cw = window.innerWidth;
+const Map = ReactMapboxGl({
+  accessToken: "pk.eyJ1IjoiZ3JpZ2lyaXkiLCJhIjoiY2p0N2Fudzd6MHB6aDN5cXoybzBhdTNiMCJ9.ZM_816Y272AQA0g8anxpyw",
+  scrollZoom: false,
+});
+
+
+class MapBlock extends Component {
     state = {
+        mobile: cw < 1024 ? true : false
     };
 
+
     render() {
-        return <Row className="screen">
+        let style="mapbox://styles/mapbox/dark-v9";
+        let height = !this.state.mobile ? '85vh' : '30vh';
+        let zoom = !this.state.mobile ? [17] : [15];
+
+        return <Row>
                 <div className="map w-100" id="map">
-                    <iframe width='100%' height='100%' style={{ minHeight:'700px' }} frameBorder='0' src='https://api.mapbox.com/styles/v1/alantemiraevson/cjosq0kem2w1q2ro4nc2qyykq.html?fresh=true&title=true&access_token=pk.eyJ1IjoiYWxhbnRlbWlyYWV2c29uIiwiYSI6ImNqMWRsbzNkOTAwMXQyeHFqZnI0b3RvcWsifQ.1YnvfdRHPlonbD1Fp-54wQ#16.09/55.757274/37.633557/1' title="mapBox"></iframe>
-                    <div className="map-label">
+                    <Map
+                      style={ style }
+                      center={[37.6383, 55.7582]}
+                      zoom={ zoom }
+                      containerStyle={{
+                        height: height,
+                        width: "100vw",
+                        marginLeft: "15px"
+                      }}
+                      >
+                        <Marker
+                          coordinates={[37.64, 55.7581]}
+                          anchor="bottom">
+                          <img src={image} alt="veladora" />
+                        </Marker>
+                        <ZoomControl />
+                    </Map>
+                    <div className="map-label" id={height}>
                         <p className="label">location</p>
                         <p className="h1">Pokrovka, 2/1-1, Moscow</p>
                         <p className="desktop">Follow the green snake</p>
@@ -23,4 +54,4 @@ class Map extends Component {
     }
 }
 
-export default Map;
+export default MapBlock;

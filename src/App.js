@@ -6,18 +6,18 @@ import Tacos from './components/Tacos';
 import Cantina from './components/Cantina';
 import Footer from './components/footer';
 
+const cw = window.innerWidth;
 class App extends Component {
 
   state = {
         page:'index',
-        mobile: false
+        mobile: cw < 1024 ? true : false
   }
-
 
   render() {
     return (
-        <BrowserRouter>
-          <div className="App"  >
+        <BrowserRouter >
+          <div className={"App " + (this.state.mobile ? '_mobile' : '_desktop')}  >
               <Switch>
                   <Route path='/' exact render={props => <MainPage { ...props } />} />
                   <Route path='/tacos' exact render={props => <Tacos { ...props } />} />

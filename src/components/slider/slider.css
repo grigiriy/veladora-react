@@ -47,13 +47,19 @@
 }
 .carousel-control-next, .carousel-control-prev {
     width: 50% !important;
-    cursor: url(../../assets/img/arrow-next.png), auto;
+    cursor: url(../../assets/img/arrow-next.svg), auto;
 }
 .carousel-control-prev {
-    cursor: url(../../assets/img/arrow-prev.png), auto;
+    cursor: url(../../assets/img/arrow-prev.svg), auto;
 }
 .sticky {
     position: -webkit-sticky;
     position: sticky;
     top: 56px;
+}
+@media(max-width:768px){
+    .carousel-inner{
+        width: 100vw;
+        height: calc( 90vh - 48px);
+    }
 }

@@ -13,10 +13,10 @@ class Slider extends Component {
 
         const slide = this.props.slider;
 
-        return <Row className="sticky">
+        return <Row className="">
             <ReactCSSTransitionGroup
-                transitionName="slider"
-                transitionAppear={this.state.firstScreen ? true : false }
+                transitionName = 'slider'
+                transitionAppear = {true}
                 transitionAppearTimeout={100}
                 transitionEnter={false}
                 transitionLeave={false}
@@ -25,7 +25,7 @@ class Slider extends Component {
                     nextIcon={<span></span>}
                     prevIcon={<span></span>}
                     id="carousel_1"
-                    className=" slide"
+                    className="slide"
                     data-ride="carousel"
                 >
                     <Carousel.Item>

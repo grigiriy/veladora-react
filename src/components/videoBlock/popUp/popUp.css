@@ -32,6 +32,29 @@
 .modal-dialog.my-modal span.cross {
     width: 30px;
     align-self: flex-end;
-    margin-right: 40px;
+    margin-right: 30px;
+    margin-top: 30px;
     cursor:pointer;
+}
+@media (max-width:768px) {
+    .modal.show {
+        z-index: 1053;
+    }
+    .modal.show .modal-dialog {
+        margin-top: 0;
+    }
+.modal-dialog.my-modal span.cross{
+        margin-top: 5px;
+        margin-right: 0;
+    }
+    .modal-dialog .modal-body{
+        padding: 100px 0 20px;
+    }
+    .modal-dialog.my-modal .modal-content {
+        height: 100%
+    }
+    .modal-dialog.my-modal .text{
+        margin: 0 15px;
+        padding: 0 15px;
+    }
 }

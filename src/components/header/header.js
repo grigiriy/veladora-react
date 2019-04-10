@@ -11,31 +11,43 @@ class Header extends Component {
         // lang: this.props.lang,
         // mobile: this.props.mobile
         lang: 'En',
-        page: this.props.page
+        page: this.props.page,
+        mobNav: false
     };
 
     langToggle = () => {
         this.state.lang === 'En' ? this.setState({lang: 'Ru'}) : this.setState({lang: 'En'});
     }
 
+    toggleMobileNav = () => {
+        let that = this;
+        if (that.state.page !== 'index') {
+            let mobNav = !that.state.mobNav;
+            that.setState({mobNav});
+        }
+    }
+
     render() {
     const { lang } = this.state;
     const page = this.state.page;
 
-        return <header >
+        return <header className={page} >
         <ReactCSSTransitionGroup
             transitionName="header"
-            transitionAppear={true}
-            transitionAppearTimeout={100}
-            transitionEnter={false}
-            transitionLeave={false}
+            transitionAppear = { true }
+            transitionAppearTimeout = { 100 }
+            transitionEnter = { false }
+            transitionLeave = { false }
         >
         <Row>
             <Nav className={"navbar w-100 d-flex " + page }>
                 <div className="logo-pic">
                     <img src={logo} alt="..." />
                 </div>
-                <div className="logo-text">
+                <div className={'logo-text mobile ' + (this.state.mobNav ? '_open' : '')}  onClick={ () => this.toggleMobileNav() }  >
+                    <img src={logo_text} alt="..." style={{paddingLeft:'15px'}} />
+                </div>
+                <div className="logo-text desktop">
                     <img src={logo_text} alt="..." style={{paddingLeft:'15px'}} />
                 </div>
                 <li className={"nav-item toggle desktop ml-auto " + (page === 'cantina' && 'active') }>
@@ -47,14 +59,15 @@ class Header extends Component {
                 <li className="nav-item ml-lg-auto nav-book" >
                     <Link className="nav-link" to="#book">Book a&nbsp;table</Link>
                 </li>
-                <li className="nav-item nav-lang desktop">
+                <li className="nav-item nav-lang">
                   <Link className="nav-link" to="#lang" onClick={this.langToggle}>{ lang }</Link>
                 </li>
             </Nav>
-            <div className="mobile subnav">
-                <Link className={"nav-link " + (page === 'cantina' ? 'active' : '') }to="/tacos">Tacos Y Tragos</Link>
+            <div className={'mobile subnav ' + (this.state.mobNav ? 'active' : '')}>
                 <Link className={"nav-link " + (page === 'cantina' ? 'active' : '')} to="/cantina">Cantina</Link>
+                <Link className={"nav-link " + (page === 'tacos' ? 'active' : '') }to="/tacos">Tacos Y Tragos</Link>
             </div>
+            { this.state.mobNav && <div className="headerFade"></div> }
         </Row>
     </ReactCSSTransitionGroup>
     </header>

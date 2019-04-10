@@ -8,7 +8,7 @@ import Slider from '../slider';
 import Menu from '../menu';
 import VideoBlock from '../videoBlock';
 import Book from '../book';
-import Map from '../map';
+import MapBlock from '../map';
 
 import Content from  './content.js';
 
@@ -16,6 +16,7 @@ class Cantina extends Component {
     state = {
         back: 'back',
         page: 'cantina',
+        mobile: this.props.mobile
     };
 
     render() {
@@ -27,24 +28,24 @@ class Cantina extends Component {
         return <>
         <Header page={ this.state.page }/>
             <Row className="screen pt-5">
-                <Col>
+                <Col sm={12} md={6}>
                     <Slider slider={ slider_1 } firstScreen={true}/>
                 </Col>
-                <Col>
+                <Col sm={12} md={6}>
                     <TextBlock content={ first_block } firstScreen={true}/>
                 </Col>
             </Row>
             <Book />
             <Row className="screen" id="menu">
-                <Col className="menu-text">
+                <Col className="menu-text" sm={12} md={6}>
                     <Menu />
                 </Col>
-                <Col className="menu-pics">
-                    <Slider slider={ slider_2 } />
+                <Col className="menu-pics" sm={12} md={6}>
+                    <Slider slider={ slider_2 }/>
                 </Col>
             </Row>
             <VideoBlock video={ video }/>
-            <Map />
+            <MapBlock />
             <Footer />
         </>
     }

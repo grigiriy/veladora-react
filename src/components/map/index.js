@@ -1,3 +1,3 @@
-import Map from './map';
+import MapBlock from './map';
 
-export default Map;
+export default MapBlock;

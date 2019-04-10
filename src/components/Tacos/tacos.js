@@ -6,7 +6,7 @@ import Footer from '../footer';
 import TextBlock from '../textBlock';
 import Slider from '../slider';
 import Menu from '../menu';
-import Map from '../map';
+import MapBlock from '../map';
 
 import Content from  './content.js';
 
@@ -15,6 +15,7 @@ class Tacos extends Component {
     state = {
         back: 'back',
         page:'tacos',
+        mobile: this.props.mobile
     };
 
     render() {
@@ -41,7 +42,7 @@ class Tacos extends Component {
                     <Slider slider={slider_2 }/>
                 </Col>
             </Row>
-            <Map />
+            <MapBlock />
             <Footer />
         </>
     }

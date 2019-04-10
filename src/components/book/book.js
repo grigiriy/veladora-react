@@ -30,10 +30,10 @@ class TextBlock extends Component {
         const sticky = this.state.sticky ? 'b-sticky' : '';
         return <>
         <Row id="book" className={"screen book-screen " + sticky}>
-            <Col col={12} className="mobile mobile_book_pic">
+            <Col sm={12} className="mobile mobile_book_pic w-100">
                 <img src={img} alt="" style={{maxWidth:'100%'}} />
             </Col>
-            <Col col={12} className="mx-auto d-flex z-10">
+            <Col sml={12} className="mx-auto d-flex z-10">
                 <form  style={{minHeight:'650px'}} id="form">
                     <span className="_form">
                         <h2 className="text-center">Book a table</h2>

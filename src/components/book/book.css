@@ -1,5 +1,5 @@
 .book-screen {
-    background-size: 100% !important;
+    background-size: calc(100% - 30px)!important;
     background: url('../../assets/img/second_block.png') #000;
     padding: 0 50px;
     background-position-x: center;
@@ -42,6 +42,7 @@
 @media(min-width:1025px){
     .book-screen.b-sticky{
         background-attachment: fixed!important;
+        background-size: 100%!important;
     }
     .book-screen:after{
         position: absolute;
@@ -183,8 +184,6 @@ form button:focus,
 .btn-primary:hover{
     border: solid 1px #c7c7c7!important;
 }
-
-
 .dropdown-menu.show .dropdown-wrap{
     background: #fff;
     max-width: 100px;
@@ -199,4 +198,36 @@ form button:focus,
 }
 .z-10{
     z-index: 10;
+}
+@media(max-width:768px){
+    .book-screen_div{
+        padding: 0;
+    }
+    .book-screen,
+    .book-screen form{
+        padding: 0;
+    }
+    .book-screen form{
+        margin: 0;
+    }
+    .book-screen h2{
+        font-size: 42px;
+    }
+    .book-screen .text-block{
+        padding: 20px 15px;
+    }
+    .schedule--time{
+        width: 100%;
+    }
+    .schedule--time>button{
+        max-width: none;
+        width: 100%;
+    }
+    .dropdown-menu.show .dropdown-wrap{
+        max-width: none;
+        margin-right: 30px;
+    }
+    form p{
+        padding: 0 15px;
+    }
 }

@@ -2,6 +2,7 @@
     padding: 20% 5%;
     justify-content: flex-start;
 }
+
 .menu-toggle {
     height: 13px;
     font-size: 11px;
@@ -13,13 +14,31 @@
     line-height: 0.1em;
     font-weight: bolder;
     margin: 10px;
-    transition: all 0.1s;
-    border-bottom: solid 1px #c7c7c7;
+    transition: all 0.3s;
+
 }
-.menu-toggle.active {
+.menuSubtitle.set .menu-toggle.set,
+.menuSubtitle.weekend .menu-toggle.weekend {
     opacity: 1;
-    border-bottom: none;
 }
+.menuSubtitle:after{
+    content: ' ';
+    border-bottom: solid 1px #c7c7c7;
+    position: absolute;
+    margin: 0;
+    width: 100px;
+    height: 25px;
+    transition: all 0.5s;
+}
+.menuSubtitle.set:after{
+    width: 75px;
+    margin-left: -125px;
+}
+.menuSubtitle.weekend:after{
+    width: 120px;
+    margin-left: 85px;
+}
+
 .menu-item {
     justify-content: space-between;
     height: 60px;
@@ -37,4 +56,44 @@
 }
 .menuSubtitle{
     margin-bottom: 55px;
+}
+@media(max-width:768px){
+    .menu-text .text-block{
+        padding: 40px 0;
+    }
+}
+
+.menu-item {
+    transition: 3s;
+    height: 77px;
+}
+.menu-item span {
+    position: absolute;
+    padding-top: 25px;
+}
+.menu-item span._vg {
+    right: 0;
+}
+.example-enter span{
+    opacity: 0;
+    height: 0;
+    transform: translateY('-50px');
+}
+.example-enter.example-enter-active span{
+    opacity: 1;
+    transform: translateY(0);
+}
+.example-leave span{
+    opacity: 1;
+}
+.example-leave.example-leave-active span{
+    opacity: 0;
+    height: 0;
+}
+.example-appear span{
+    opacity: 0;
+    height: 0;
+}
+.example-appear.example-appear-active span{
+    opacity: 1;
 }

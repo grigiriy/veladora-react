@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import {Row, Col} from 'react-bootstrap';
+import Slider from 'react-slick';
 
 import  './videoBlock.css';
 
 import Item from './item';
-import circle from '../../assets/img/circle-logo.png';
+import circle from '../../assets/img/circle-logo.svg';
 
 class VideoBlock extends Component {
     state = {
@@ -24,6 +25,17 @@ class VideoBlock extends Component {
         const { video_2 }  = this.props.video;
         const { video_3 } = this.props.video;
         const { video_4 } = this.props.video;
+
+        var settings = {
+          dots: false,
+          infinite: false,
+          speed: 300,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: '15px',
+          arrows: false,
+        };
 
         return <>
         <Row className="custom-screen video-back" style={{paddingTop:'30px'}} id="video">
@@ -49,12 +61,15 @@ class VideoBlock extends Component {
                             <Item video={ video_4 }/>
                         </div>
                     </Row>
-                    <Row className="d-flex video-block mobile">
+                    <Slider
+                        className="d-flex video-block mobile"
+                        {...settings}
+                    >
                         <Item video={ video_1 }/>
                         <Item video={ video_2 }/>
                         <Item video={ video_3 }/>
                         <Item video={ video_4 }/>
-                    </Row>
+                    </Slider>
                 </div>
             </Col>
         </Row>

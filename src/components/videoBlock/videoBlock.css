@@ -50,7 +50,7 @@
     position: absolute;
     height: 48px;
     width: 48px;
-    background: url(../../assets/img/video-icon.png);
+    background: url(../../assets/img/video-icon.svg);
     left: 32px;
     top: 144px;
 }
@@ -91,4 +91,12 @@
 .video-wrap {
     text-align: left;
     padding-right: 32px;
+}
+@media(max-width:768px){
+    .video-back {
+        background: linear-gradient(-60deg, white 50%, rgba(71, 142, 54, 0.16) 50%);
+    }
+    .video-back .text{
+        margin: 0 15px;
+    }
 }

@@ -10,6 +10,9 @@
     padding-top: 0;
     left: 0;
 }
+.nav.navbar.index{
+    display: none!important;
+}
 .nav.navbar.tacos{
     background-position-x: calc(50% + 200px);
 }
@@ -54,4 +57,96 @@
 /* === */
 .header-appear.header-appear-active .nav{
   margin-top: 0;
+}
+
+
+@media(max-width:768px){
+    .nav.navbar.index{
+        display: flex!important;
+    }
+    .nav.cantina li a{
+        display: block;
+        width: 70px;
+        line-height: 1.2em;
+    }
+    .nav.index .nav-book{
+        display: none;
+    }
+    .nav.tacos .nav-book{
+        visibility: hidden;
+    }
+    .nav .nav-book,
+    .nav .logo-pic{
+        width: 50px;
+    }
+    .nav .nav-book{
+        margin-right: 20px;
+    }
+    .nav.cantina .nav-lang,
+    .nav.tacos .nav-lang{
+        display: none;
+    }
+    .nav.index .nav-lang{
+        border-left: none;
+        width: 30px;
+        margin-left: 40px;
+    }
+    .nav{
+        background-position-x: -200px!important;
+    }
+    .nav.cantina .logo-text.mobile:after,
+    .nav.tacos .logo-text.mobile:after {
+        content: ' ';
+        position: absolute;
+        height: 4px;
+        margin-top: 4px;
+        width: 8px;
+        background: url(../../assets/img/shape.png) no-repeat;
+        margin-left: 5px;
+        top: 30px;
+        transition: all 0.3s;
+    }
+    .nav .logo-text.mobile._open:after{
+        transform: rotate(180deg);
+    }
+    .subnav {
+        display: block;
+        position: fixed;
+        top: 50px;
+        z-index: 10;
+        text-align: center;
+        width: 100%;
+        padding: 10px 0 20px 20px;
+        background: #fff;
+        left: 0;
+        margin-top: -300px;
+        transition: all 1s;
+        z-index: 2;
+    }
+    .subnav.active {
+        margin-top: 0;
+        z-index: 1052;
+    }
+    .headerFade{
+        transition: all 1s;
+        width: 100vw;
+        position: fixed;
+        background: rgba(0, 0, 0, 0.6);
+        height: 140vh;
+        z-index: 1;
+    }
+    .subnav a {
+        font-family: BerlingskeSerif;
+        font-size: 20px;
+        letter-spacing: 0.4px;
+        text-align: center;
+        color: #000;
+        padding: 10px;
+        text-decoration: underline;
+        opacity: 0.5;
+    }
+    .subnav a.active {
+        opacity: 1;
+        text-decoration: none;
+    }
 }

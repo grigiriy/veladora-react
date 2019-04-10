@@ -46,7 +46,6 @@ class Item extends Component {
                 onHide={this.handleClose}
                 dialogClassName={'my-modal'}
             >
-            <Modal.Header />
                 <span onClick={() => this.handleClose()} className="cross">
                     <img alt="" src={ cross } />
                 </span>
