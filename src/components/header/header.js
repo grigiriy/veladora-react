@@ -35,7 +35,7 @@ class Header extends Component {
         <ReactCSSTransitionGroup
             transitionName="header"
             transitionAppear = { true }
-            transitionAppearTimeout = { 100 }
+            transitionAppearTimeout = { 1000 }
             transitionEnter = { false }
             transitionLeave = { false }
         >

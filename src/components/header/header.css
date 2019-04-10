@@ -55,7 +55,7 @@
   transition: all 1s;
 }
 /* === */
-.header-appear.header-appear-active .nav{
+.header-appear-active .nav{
   margin-top: 0;
 }
 
