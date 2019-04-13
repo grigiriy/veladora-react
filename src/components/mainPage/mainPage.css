@@ -163,7 +163,7 @@
 .backImg+.container-fluid {
     z-index: 10;
 }
-@media (max-width:768px) {
+@media (max-width:1024px) {
     .anim-appear .item .title {
         margin-top: 0
     }
@@ -193,7 +193,6 @@
         margin: auto;
     }
     .backImg {
-        margin-left: calc(100% - 100vw);
         top: 60px;
         height: calc(100vh - 60px);
     }
@@ -220,6 +219,11 @@
         width: 100vw;
         height: 100vh;
         border-top: 0;
+    }
+}
+@media(max-width:768px){
+    .backImg {
+        margin-left: calc(100% - 100vw);
     }
 }
 @media (max-width:450px) {
