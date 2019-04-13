@@ -164,6 +164,7 @@
     width: auto;
     min-height: 100vh;
     transition: 0.5s;
+    min-width: 100%;
 }
 .bordAbs {
     z-index: 11;
