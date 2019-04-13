@@ -9,7 +9,7 @@ body.noscroll{
     overflow-y:hidden;
     background: #000;
 }
-@media(max-width:768px){
+@media(max-width:1024px){
     body.noscroll{
         position:fixed;
     }
