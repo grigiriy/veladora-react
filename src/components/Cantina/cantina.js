@@ -28,7 +28,7 @@ class Cantina extends Component {
 
         return <>
         <Header page={ this.state.page }/>
-            <Row className="screen pt-5">
+            <Row className="screen">
                 <Col sm={12} md={6}>
                 <ReactCSSTransitionGroup
                     transitionName = 'slider'

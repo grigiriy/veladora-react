@@ -20,8 +20,10 @@
     transition-duration: 1s;
 }
 .carousel-inner{
-    height: calc(100vh - 48px);
-    max-height: calc(100vh - 48px);
+    /* height: calc(100vh - 48px);
+    max-height: calc(100vh - 48px); */
+    height: 100vh;
+    max-height: 100vh;
     overflow: hidden;
     width: 50vw;
 }

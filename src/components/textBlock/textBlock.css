@@ -29,7 +29,7 @@
 @media(max-width:1439px){
     .text-block.h-480 {
         /* overflow-y: scroll; */
-        height: 600px;
+        height: 500px;
     }
 }
 .label {

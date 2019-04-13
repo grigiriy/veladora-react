@@ -102,7 +102,8 @@ p{
 }
 
 .screen{
-    min-height: calc(100vh - 60px);
+    /* min-height: calc(100vh - 60px); */
+    min-height: 100vh;
 }
 a:hover{
     text-decoration: none;
