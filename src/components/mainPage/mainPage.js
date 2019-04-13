@@ -39,7 +39,7 @@ class MainPage extends Component {
         <ReactCSSTransitionGroup
             transitionName="anim"
             transitionAppear={ true }
-            transitionAppearTimeout={ 3000 }
+            transitionAppearTimeout={ 20000 }
             transitionEnter={ false }
             transitionLeave={ false }
         >

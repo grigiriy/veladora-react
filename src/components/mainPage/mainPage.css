@@ -104,11 +104,12 @@
 }
 .anim-appear .item {
     transition: all 1s ease-in;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 .anim-appear .logo {
-    transition: all 0.7s ease-in;
-    margin-top: 30px;
+    transition: all 2s ease-in;
+    margin-top: -300px;
+    opacity: 0;
 }
 .anim-appear.bordAbs {
     border: solid 0px #fff;
@@ -131,9 +132,13 @@
 .anim-appear.anim-appear-active div {
   opacity: 1;
 }
-.anim-appear.anim-appear-active .item,
+.anim-appear.anim-appear-active .item {
+    margin-top: 0;
+}
 .anim-appear.anim-appear-active .logo {
-  margin-top: 0;
+  margin-top: -400px;
+  opacity: 1;
+  transition: all 1s ease-in;
 }
 .anim-appear.anim-appear-active.bordAbs {
     border: solid 20px #fff;
@@ -149,9 +154,12 @@
 .logo {
     position: absolute;
 }
-.logo,
 .item {
-    padding-top: 100px!important;
+    padding-top: 100px;
+}
+.logo{
+    align-self: center;
+    margin-top: -400px;
 }
 @keyframes fadeOut {
   0% { transform: none; }
