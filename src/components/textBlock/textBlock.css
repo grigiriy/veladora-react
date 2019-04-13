@@ -15,23 +15,6 @@
     max-width: 625px;
     padding: 0 80px;
 }
-@media(min-width: 1024px) and (max-width: 1280px){
-    .cantina h1{
-        padding-top: 0;
-    }
-}
-@media(max-width: 1024px){
-    .text-block.h-480 {
-        overflow-y: scroll;
-         padding: 0 20px;
-    }
-}
-@media(max-width:1439px){
-    .text-block.h-480 {
-        /* overflow-y: scroll; */
-        height: 500px;
-    }
-}
 .label {
     font-size: 12px;
     text-transform: uppercase;
@@ -97,6 +80,34 @@
  .text-appear.header-appear-active ._an{
   padding-top: 0;
   opacity: 1;
+}
+@media(min-width: 1024px) and (max-width: 1280px){
+    .cantina h1,
+    .tacos h1{
+        padding-top: 0;
+    }
+}
+@media(max-width: 1024px){
+    .text-block.h-480 {
+        /* overflow-y: scroll; */
+         padding: 0 20px;
+         margin-top: 130px;
+    }
+    #add_text p{
+        margin-top: -9rem;
+    }
+    .tacos #add_text p{
+        margin-top: -7rem;
+    }
+    #add_text.shown p{
+        margin-top: 0;
+    }
+}
+@media(max-width:1439px){
+    .text-block.h-480 {
+        /* overflow-y: scroll; */
+        height: 500px;
+    }
 }
 @media(max-width:768px){
     .text-block{
