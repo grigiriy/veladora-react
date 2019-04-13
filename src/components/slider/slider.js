@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Row, Carousel} from 'react-bootstrap';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import  './slider.css';
 
 class Slider extends Component {
@@ -14,31 +13,23 @@ class Slider extends Component {
         const slide = this.props.slider;
 
         return <Row className="">
-            <ReactCSSTransitionGroup
-                transitionName = 'slider'
-                transitionAppear = {true}
-                transitionAppearTimeout={100}
-                transitionEnter={false}
-                transitionLeave={false}
+            <Carousel
+                nextIcon={<span></span>}
+                prevIcon={<span></span>}
+                id="carousel_1"
+                className="slide col"
+                data-ride="carousel"
             >
-                <Carousel
-                    nextIcon={<span></span>}
-                    prevIcon={<span></span>}
-                    id="carousel_1"
-                    className="slide"
-                    data-ride="carousel"
-                >
-                    <Carousel.Item>
-                        <div className="d-block w-100" style={{backgroundImage: 'url(' + slide[0] + ')' }}></div>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <div className="d-block w-100" style={{backgroundImage: 'url(' + slide[1] + ')' }}></div>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                      <div className="d-block w-100" style={{backgroundImage: 'url(' + slide[2] + ')' }}></div>
-                    </Carousel.Item>
-                </Carousel>
-            </ReactCSSTransitionGroup>
+                <Carousel.Item>
+                    <div className="d-block w-100" style={{backgroundImage: 'url(' + slide[0] + ')' }}></div>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <div className="d-block w-100" style={{backgroundImage: 'url(' + slide[1] + ')' }}></div>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <div className="d-block w-100" style={{backgroundImage: 'url(' + slide[2] + ')' }}></div>
+                </Carousel.Item>
+            </Carousel>
         </Row>
     }
 }

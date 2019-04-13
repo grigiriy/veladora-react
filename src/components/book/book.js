@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import {Row, Col, Dropdown} from 'react-bootstrap';
+import { Row, Col, Dropdown } from 'react-bootstrap';
+import DayPicker from 'react-daypicker';
 
+import 'react-daypicker/lib/DayPicker.css';
 import  './book.css';
 
 import img from '../../assets/img/second_block.png';
@@ -8,7 +10,10 @@ import img from '../../assets/img/second_block.png';
 class TextBlock extends Component {
     state = {
         sent: false,
-        sticky: false
+        sticky: false,
+        persons: 1,
+        day: 'Today',
+        calend: false,
     };
 
     handleSticky = event => {
@@ -16,6 +21,26 @@ class TextBlock extends Component {
         let endSticky = document.getElementById('menu').offsetTop;
         (window.scrollY > startSticky && window.scrollY < endSticky) ? this.setState({sticky: true}) : this.setState({sticky: false});
     }
+
+    addPerson() {
+        if (this.state.persons < 11) {
+            this.setState({ persons: this.state.persons + 1 });
+        }
+    }
+    removePerson() {
+        if (this.state.persons > 1) {
+            this.setState({ persons: this.state.persons - 1 });
+        }
+    }
+    // toggleCalend() {
+    //     let toggledCalend = !this.state.calend;
+    //     this.setState({ calend: true });
+    //     if (!this.state.popupVisible) {
+    //       document.addEventListener('click', this.handleOutsideClick, false);
+    //     } else {
+    //       document.removeEventListener('click', this.handleOutsideClick, false);
+    //     }
+    // }
 
     // Init
 	componentDidMount() {
@@ -28,6 +53,7 @@ class TextBlock extends Component {
 
     render() {
         const sticky = this.state.sticky ? 'b-sticky' : '';
+        let persons = this.state.persons + ' persons';
         return <>
         <Row id="book" className={"screen book-screen " + sticky}>
             <Col sm={12} className="mobile mobile_book_pic w-100">
@@ -44,8 +70,9 @@ class TextBlock extends Component {
                                 <div className="line-inputs row">
                                     <div className="col-md-7 col-sm-12 schedule-inputs">
                                         <div className="d-flex schedule">
-                                            <span className="schedule--date">
-                                                <input className="calend_input" type="text" name="date" id="date" placeholder="date" />
+                                            <span className="schedule--date" onClick={ () => this.toggleCalend() }>
+                                                <input className="calend_input" type="text" name="date" id="date" value={ this.state.day } />
+                                                { this.state.calend && (<DayPicker onDayClick={(day) => this.setState({ day })} />) }
                                             </span>
                                             <Dropdown className="schedule--time">
                                                 <Dropdown.Toggle id="schedule" type="button" data-toggle="dropdown">19:00</Dropdown.Toggle>
@@ -60,7 +87,9 @@ class TextBlock extends Component {
                                         </div>
                                     </div>
                                     <div className="persons-input col-md-5 col-sm-12">
-                                        <span id="minus">-</span><input type="text"  placeholder="persons" id="persons" value="" disabled /><span id="plus">+</span>
+                                        <span id="minus" onClick={ () => this.removePerson() }>-</span>
+                                            <input type="text"  placeholder="persons" id="persons" value={ persons } disabled />
+                                        <span id="plus" onClick={ () => this.addPerson() }>+</span>
                                     </div>
                                 </div>
                                 <input type="phone" placeholder="phone number" className="w-100" />

@@ -9,7 +9,7 @@
 .book-screen form {
     background: #fff;
     padding: 80px 65px;
-    max-width: 720px;
+    width: 720px;
     margin: 0 auto 150px;
     align-self: flex-end;
 }
@@ -58,8 +58,8 @@
 
 form input,
 .schedule--time>button {
-    border: solid 1px #ececec;
-    padding: 16px;
+    border: solid 1px #ececec!important;
+    padding: 16px!important;
     transition: all 0.2s;
 }
 .inputs input,
@@ -77,15 +77,17 @@ form input,
     flex-wrap: wrap;
 }
 .schedule--date {
-    max-width: calc(90% - 100px);
-    margin-right: 10% !important;
+    /* max-width: calc(90% - 100px);
+    margin-right: 10% !important; */
+    margin-right: -1px !important;
 }
 .schedule input,
 .schedule button {
     max-width: 100%;
 }
 .schedule--date::before {
-    margin-right: 50%;
+    margin-right: 162px;
+    z-index: 99;
 }
 .schedule--time::before {
     margin-right: 9%;
@@ -199,6 +201,41 @@ form button:focus,
 .z-10{
     z-index: 10;
 }
+.calend_input{
+    width: 198px;
+    margin-right: 32px!important;
+}
+.react-daypicker-root{
+    width: 329px;
+    border: solid 1px #ececec;
+}
+.react-daypicker-root table{
+    margin: 0 auto;
+}
+.react-daypicker-root table th{
+    font-weight: normal
+}
+.react-daypicker-root th,
+.react-daypicker-root td {
+    padding: 8px 0;
+    text-align: center;
+    min-width: 40px;
+    border-radius: 30px;
+}
+.react-daypicker-root .day:hover:not(.empty) {
+    background: #000;
+    color: #fff;
+}
+.react-daypicker-root .previous-month,
+.react-daypicker-root .next-month{
+    font-size: 0.6em;
+}
+.react-daypicker-root .header{
+    padding-bottom: 20px;
+}
+.react-daypicker-root .header .month-year{
+    text-transform: uppercase;
+}
 @media(max-width:768px){
     .book-screen_div{
         padding: 0;
@@ -230,4 +267,10 @@ form button:focus,
     form p{
         padding: 0 15px;
     }
+}
+
+.react-daypicker-root{
+    position: absolute;
+    background: #fff;
+
 }

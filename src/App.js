@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Switch } from 'react-router';
-import { BrowserRouter, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import MainPage from './components/MainPage';
 import Tacos from './components/Tacos';
 import Cantina from './components/Cantina';
@@ -15,8 +14,7 @@ class App extends Component {
   }
 
   render() {
-    return (
-        <BrowserRouter >
+    return <>
           <div className={"App " + (this.state.mobile ? '_mobile' : '_desktop')}  >
               <Switch>
                   <Route path='/' exact render={props => <MainPage { ...props } />} />
@@ -25,8 +23,7 @@ class App extends Component {
               </Switch>
           </div>
           { this.state.page !== 'index' && <Footer /> }
-      </BrowserRouter>
-     )
+      </>
   }
 }
 

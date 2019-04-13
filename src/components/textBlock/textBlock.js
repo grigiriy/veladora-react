@@ -31,7 +31,7 @@ class TextBlock extends Component {
         //     document.getElementById('add_text').classList.remove('d-none');
 
         return <div className="d-flex v-center">
-            <div className="wrapper text-block h-480 tacos">
+            <div className={"wrapper text-block h-480 " + this.props.page}>
                 <ReactCSSTransitionGroup
                     transitionName="text"
                     transitionAppear={this.state.firstScreen ? true : false }

@@ -195,6 +195,7 @@
         top: 60px;
         min-height: 100%;
         height: calc(100vh - 60px);
+        width: 100%;
     }
     .item {
         padding-top: 0!important;

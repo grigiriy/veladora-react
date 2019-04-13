@@ -27,13 +27,12 @@ class Tacos extends Component {
         <Header page={this.state.page}/>
             <Row className="screen pt-5">
                 <Col>
-                    <Slider slider={slider_1} firstScreen={true}/>
+                    <Slider slider={slider_1} firstScreen={true} />
                 </Col>
                 <Col>
-                    <TextBlock content={first_block} firstScreen={true}/>
+                    <TextBlock content={first_block} firstScreen={true} page={this.state.page}/>
                 </Col>
             </Row>
-
             <Row className="screen" id="menu">
                 <Col className="menu-text">
                     <Menu />

@@ -7,12 +7,30 @@
 .text-block {
     justify-content: center;
     flex-direction: column;
-    padding: 0 5%;
+    padding: 0;
     height: 100%;
 }
 .text-block.h-480 {
     height: 480px;
-    max-width: 650px;
+    max-width: 625px;
+    padding: 0 80px;
+}
+@media(min-width: 1024px) and (max-width: 1280px){
+    .cantina h1{
+        padding-top: 0;
+    }
+}
+@media(max-width: 1024px){
+    .text-block.h-480 {
+        overflow-y: scroll;
+         padding: 0 20px;
+    }
+}
+@media(max-width:1439px){
+    .text-block.h-480 {
+        /* overflow-y: scroll; */
+        height: 600px;
+    }
 }
 .label {
     font-size: 12px;
@@ -22,8 +40,6 @@
     padding-bottom: 4px;
 }
 #add_text {
-    /* position: absolute; */
-    /* height: 0; */
     opacity: 0;
     transition: all 0.5s;
 }
@@ -32,13 +48,14 @@
     transition: all 2s;
 }
 #add_text p{
-    margin-top: -90px;
+    margin-top: -12rem;
     transition: all 1s;
-    transform:scale(1, 0.7);
+}
+.tacos #add_text p{
+    margin-top: -10rem;
 }
 #add_text.shown p{
-    margin-top: 0px;
-    transform:scale(1, 1);
+    margin-top: 0;
 }
 .read-more {
     /* top: 27rem; */
@@ -93,5 +110,9 @@
     }
     .text-block p{
         font-size: 17px;
+    }
+    .text-block.h-480 {
+        height: 100%;
+        padding-bottom: 20px;
     }
 }

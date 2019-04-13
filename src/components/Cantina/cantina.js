@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import Header from '../header';
 import Footer from '../footer';
@@ -29,10 +30,18 @@ class Cantina extends Component {
         <Header page={ this.state.page }/>
             <Row className="screen pt-5">
                 <Col sm={12} md={6}>
+                <ReactCSSTransitionGroup
+                    transitionName = 'slider'
+                    transitionAppear = {true}
+                    transitionAppearTimeout={100}
+                    transitionEnter={false}
+                    transitionLeave={false}
+                >
                     <Slider slider={ slider_1 } firstScreen={true}/>
+                </ReactCSSTransitionGroup>
                 </Col>
                 <Col sm={12} md={6}>
-                    <TextBlock content={ first_block } firstScreen={true}/>
+                    <TextBlock content={ first_block } firstScreen={ true } page={ this.state.page }/>
                 </Col>
             </Row>
             <Book />

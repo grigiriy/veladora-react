@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import {Nav,Row} from 'react-bootstrap';
 import logo from '../../assets/img/logo_vela.svg';
 import logo_text from '../../assets/img/logo_font.svg';
@@ -57,7 +58,7 @@ class Header extends Component {
                   <Link className="nav-link" to="/tacos">Tacos Y Tragos</Link>
                 </li>
                 <li className="nav-item ml-lg-auto nav-book" >
-                    <Link className="nav-link" to="#book">Book a&nbsp;table</Link>
+                    <HashLink className="nav-link" smooth to="#form">Book a&nbsp;table</HashLink>
                 </li>
                 <li className="nav-item nav-lang">
                   <Link className="nav-link" to="#lang" onClick={this.langToggle}>{ lang }</Link>
