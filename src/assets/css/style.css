@@ -7,7 +7,7 @@ body{
 body.noscroll{
     max-height: 100vh;
     overflow-y:hidden;
-    background: #000;
+    /* background: #000; */
 }
 @media(max-width:1024px){
     body.noscroll{

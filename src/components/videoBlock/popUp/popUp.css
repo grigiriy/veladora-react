@@ -29,7 +29,7 @@
 .modal-dialog.my-modal .img>img {
     width: 100%;
 }
-.modal-dialog.my-modal span.cross {
+.modal-dialog.my-modal .cross {
     width: 30px;
     align-self: flex-end;
     margin-right: 30px;

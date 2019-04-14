@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 // import PopUp from './popUp';
 import { Modal, Row, Col } from 'react-bootstrap';
+import { HashLink } from 'react-router-hash-link';
 
 import  './popUp/popUp.css';
 
@@ -15,9 +16,13 @@ class Item extends Component {
     };
 
     showPopup() {
+        setTimeout( function(){
+            document.querySelector('body').classList.add('noscroll');
+        }, 500)
         this.setState({ show: true });
     }
     handleClose = () =>  {
+        document.querySelector('body').classList.remove('noscroll');
       this.setState({ show: false });
     }
 
@@ -46,9 +51,9 @@ class Item extends Component {
                 onHide={this.handleClose}
                 dialogClassName={'my-modal'}
             >
-                <span onClick={() => this.handleClose()} className="cross">
+                <HashLink onClick={() => this.handleClose()} to="#video" className="cross">
                     <img alt="" src={ cross } />
-                </span>
+                </HashLink>
             <Modal.Body>
                 <Row>
                     <Col className="img" lg={7} md={12}>
