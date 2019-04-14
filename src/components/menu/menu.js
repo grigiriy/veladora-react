@@ -31,8 +31,7 @@ toggleMenu = (a) => {
                     </Row>
                     <Row>
                         <Col md={10} className="mx-auto px-sm-0">
-                            <div class="menu-list">
-                                { (this.state.items).map((item, index) =>
+                            <div className="menu-list">
                                     <ReactCSSTransitionGroup
                                         transitionName="example"
                                         transitionEnter = { true }
@@ -40,9 +39,10 @@ toggleMenu = (a) => {
                                         transitionLeaveTimeout = { 400 }
                                         transitionAppearTimeout = { 400 }
                                     >
+                                { (this.state.items).map((item, index) =>
                                     <Item menu = { this.state.menu } item = { item } key = { this.state.menu + index } />
-                                  </ReactCSSTransitionGroup>
                                 ) }
+                                  </ReactCSSTransitionGroup>
                             </div>
                         </Col>
                     </Row>
