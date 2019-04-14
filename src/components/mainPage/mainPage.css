@@ -42,7 +42,7 @@
 .subtitle {
     opacity: 0!important;
     font-size: 0;
-    transition: all 0.5s;
+    transition: all 0.3s;
 }
 .subtitle p {
     font-family: ApercuPro;
@@ -57,17 +57,6 @@
 }
 .centred {
     height: 100%;
-}
-@media(min-width:769px) {
-    .item:hover .title {
-        margin-top: -40px;
-    }
-    .item:hover .title p>span {
-        font-size: 48px;
-    }
-    .item:hover .subtitle {
-        opacity: 1!important;;
-    }
 }
 /* ============ */
 .main-screen {
@@ -85,19 +74,13 @@
     opacity: 1!important;
 }
 /* === */
-.anim-appear {
-  opacity: 0.01;
-}
 .anim-appear div {
-    transition: all 0.5s ease-in;
      opacity: 0.01;
 }
 .anim-appear .item .title {
-    transition: all 1s ease-in;
-    margin-top: 30px;
+    margin-top: 80px;
 }
 .anim-appear .logo {
-    transition: all 2s ease-in;
     margin-top: -300px;
     opacity: 0;
 }
@@ -120,7 +103,11 @@
 }
 .anim-appear.anim-appear-active,
 .anim-appear.anim-appear-active div {
-  opacity: 1;
+    transition: all 0.7s ease-in;
+    opacity: 1;
+}
+.anim-appear.anim-appear-active .item .subtitle {
+    transition: all 0.5s ease-in;
 }
 .anim-appear.anim-appear-active .item .title {
     margin-top: 0;
@@ -128,7 +115,7 @@
 .anim-appear.anim-appear-active .logo {
   margin-top: -400px;
   opacity: 1;
-  transition: all 1s ease-in;
+  transition: all 0.7s ease-in;
 }
 .anim-appear.anim-appear-active.bordAbs {
     border: solid 20px #fff;
@@ -219,6 +206,17 @@
         width: 100vw;
         height: 100vh;
         border-top: 0;
+    }
+}
+@media(min-width:769px) {
+    .item:hover .title {
+        margin-top: -40px!important;
+    }
+    .item:hover .title p>span {
+        font-size: 48px!important;
+    }
+    .item:hover .subtitle {
+        opacity: 1!important;
     }
 }
 @media(max-width:768px){
