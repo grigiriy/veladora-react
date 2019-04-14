@@ -5,7 +5,6 @@
     background-position-x: center;
     background-repeat: no-repeat;
 }
-
 .book-screen form {
     background: #fff;
     padding: 80px 65px;
@@ -13,61 +12,19 @@
     margin: 0 auto 150px;
     align-self: flex-end;
 }
-
-@media(min-width: 769px){
-    .book-screen{
-        height: calc(100vh + 900px);
-        justify-content: flex-end;
-        flex-direction: column;
-        align-items: center;
-    }
+.inputs input:focus,
+.inputs button:focus {
+    outline:none;
+    box-shadow: none;
 }
-@media(min-width:769px) and (max-width:1024px){
-    .book-screen{
-        background-size: cover!important;
-        height: calc(100vh - 250px);
-    }
-    .book-screen h2{
-        font-size: 48px;
-    }
-    .book-screen p{
-        font-size: 16px;
-        margin-bottom: 0;
-    }
-    .book-screen form{
-        padding: 30px 25px;
-        max-width: 40vw
-    }
+.inputs button:active {
+    background: inherit;
+    color: inherit;
 }
-@media(min-width:1025px){
-    .book-screen.b-sticky{
-        background-attachment: fixed!important;
-        background-size: 100%!important;
-    }
-    .book-screen:after{
-        position: absolute;
-        background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.75) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.75) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#bf000000',GradientType=0 ); /* IE6-9 */
-        content: ' ';
-        height: 180vh;
-        width: 100vw;
-    }
-}
-form input:focus,
-form button:focus {
-    outline:none!important;
-    box-shadow: none!important;
-}
-form button:active {
-    background: inherit!important;
-    color: inherit!important;
-}
-form input,
+.inputs input,
 .schedule--time>button {
-    border: solid 1px #ececec!important;
-    padding: 16px!important;
+    border: solid 1px #ececec;
+    padding: 16px;
     transition: all 0.2s;
 }
 .inputs input,
@@ -85,8 +42,6 @@ form input,
     flex-wrap: wrap;
 }
 .schedule--date {
-    /* max-width: calc(90% - 100px);
-    margin-right: 10% !important; */
     margin-right: -1px !important;
 }
 .schedule input,
@@ -110,14 +65,12 @@ form input,
     position: absolute;
     right: 0;
 }
-
 .dropdown-item {
     letter-spacing: 1px;
     font-size: 12px;
     padding: 16px;
     opacity: 0.5;
 }
-
 .persons-input {
     margin: 16px 0;
     display: inherit;
@@ -141,7 +94,6 @@ input#persons {
     border-left-color: transparent;
     border-right-color: transparent;
 }
-
 .inputs + button{
     padding: 16px;
     background: #000;
@@ -150,31 +102,28 @@ input#persons {
     transition: all 0.3s;
     border: solid 2px transparent;
 }
-
-.dropdown{
+.dropdown {
     position: static;
 }
-.dropdown-toggle::after{
+.dropdown-toggle::after {
     content:none;
 }
-
-.schedule--time>button{
+.schedule--time>button {
     background: transparent;
     color: inherit;
     max-width: 100px;
     width: 100px;
     text-align: left;
 }
-
-form input:hover,
-form button:hover,
+.inputs input:hover,
+.inputs button:hover,
 .persons-input span:hover,
 .persons-input input:hover,
 .persons-input input:focus {
     border: solid 1px #c7c7c7;
 }
-form input:focus,
-form button:focus,
+.inputs input:focus,
+.inputs button:focus,
 .persons-input span:focus {
     border: solid 1px #7f7f7f;
 }
@@ -186,15 +135,15 @@ form button:focus,
 }
 .btn-primary:hover,
 .btn-primary:focus,
-.show > .btn-primary.dropdown-toggle{
+.show > .btn-primary.dropdown-toggle {
     background: transparent!important;
     color: #000!important;
-    border: solid 1px #7f7f7f!important;
+    border: solid 1px #ececec!important;
 }
-.btn-primary:hover{
+.btn-primary:hover {
     border: solid 1px #c7c7c7!important;
 }
-.dropdown-menu.show .dropdown-wrap{
+.dropdown-menu.show .dropdown-wrap {
     background: #fff;
     max-width: 100px;
     border: solid 1px #ececec;
@@ -209,76 +158,144 @@ form button:focus,
 .z-10{
     z-index: 10;
 }
-.calend_input{
-    width: 198px;
-    margin-right: 32px!important;
+.schedule--time{
+    margin-left: auto;
 }
-.react-daypicker-root{
+.DayPicker {
     width: 329px;
     border: solid 1px #ececec;
 }
-.react-daypicker-root table{
+.DayPickerInput-Overlay {
+    box-shadow: none;
+}
+.DayPicker-Month {
     margin: 0 auto;
 }
-.react-daypicker-root table th{
+.DayPicker-Weekday {
     font-weight: normal
 }
-.react-daypicker-root th,
-.react-daypicker-root td {
-    padding: 8px 0;
+.DayPicker-Caption,
+.DayPicker-Day {
     text-align: center;
-    min-width: 40px;
-    border-radius: 30px;
 }
-.react-daypicker-root .day:hover:not(.empty) {
-    background: #000;
+.DayPicker-Caption{
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+.DayPicker-Day {
+    color: #333;
+    font-size: 16px;
+    font-weight: lighter;
+    text-align: center;
+    width: 38px;
+    border-radius: 50%;
+    height: 38px;
+    line-height: 0;
+}
+.DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
+    background: #000!important;
     color: #fff;
 }
-.react-daypicker-root .previous-month,
-.react-daypicker-root .next-month{
-    font-size: 0.6em;
+.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+    background: #000;
+    color: #fff;
+    border-color: #fff;
 }
-.react-daypicker-root .header{
+.DayPicker-Day--disabled {
+    opacity: 0.5;
+    cursor: no-drop;
+}
+.DayPicker-NavButton {
+    font-size: 0.6em;
+    opacity: 0.5;
+    margin-top: 10px;
+}
+.DayPicker-NavButton--prev {
+    margin-right: calc(100% - 5em);
+}
+.DayPicker-NavButton--next {
+    margin-right: 1em;
+}
+.DayPicker .header {
     padding-bottom: 20px;
 }
-.react-daypicker-root .header .month-year{
+.DayPicker .header .month-year {
     text-transform: uppercase;
 }
-@media(max-width:768px){
-    .book-screen_div{
+.DayPickerInput input {
+    width: 201px;
+}
+@media(min-width: 769px) {
+    .book-screen{
+        height: calc(100vh + 900px);
+        justify-content: flex-end;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media(min-width:769px) and (max-width:1024px) {
+    .book-screen {
+        background-size: cover!important;
+        height: calc(100vh - 250px);
+    }
+    .book-screen h2 {
+        font-size: 48px;
+    }
+    .book-screen p {
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+    .book-screen form {
+        padding: 30px 25px;
+        max-width: 40vw
+    }
+}
+@media(min-width:1025px) {
+    .book-screen.b-sticky {
+        background-attachment: fixed!important;
+        background-size: 100%!important;
+    }
+    .book-screen:after {
+        position: absolute;
+        background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.75) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.75) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#bf000000',GradientType=0 ); /* IE6-9 */
+        content: ' ';
+        height: 180vh;
+        width: 100vw;
+    }
+}
+@media(max-width:768px) {
+    .book-screen_div {
         padding: 0;
     }
     .book-screen,
-    .book-screen form{
+    .book-screen form {
         padding: 0;
     }
-    .book-screen form{
+    .book-screen form {
         margin: 0;
     }
-    .book-screen h2{
+    .book-screen h2 {
         font-size: 42px;
     }
-    .book-screen .text-block{
+    .book-screen .text-block {
         padding: 20px 15px;
     }
-    .schedule--time{
+    .schedule--time {
         width: 100%;
     }
-    .schedule--time>button{
+    .schedule--time>button {
         max-width: none;
         width: 100%;
     }
-    .dropdown-menu.show .dropdown-wrap{
+    .dropdown-menu.show .dropdown-wrap {
         max-width: none;
         margin-right: 30px;
     }
-    form p{
+    form p {
         padding: 0 15px;
     }
-}
-
-.react-daypicker-root{
-    position: absolute;
-    background: #fff;
-
 }

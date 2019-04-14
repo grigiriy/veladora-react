@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Row, Col, Dropdown } from 'react-bootstrap';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
+import MomentLocaleUtils, { formatDate, parseDate } from 'react-day-picker/moment';
+import 'moment/locale/it';
 
 import 'react-day-picker/lib/style.css';
 import  './book.css';
@@ -11,13 +13,13 @@ class TextBlock extends Component {
     state = {
         sent: false,
         sticky: false,
-        persons: 1,
+        persons: 2,
         day: 'Today',
         time: '19:00',
         calend: false,
     };
 
-     handleDayChange = async (day) => {
+     handleDayClick = async (day) => {
         this.setState({ day: day });
      }
 
@@ -38,7 +40,6 @@ class TextBlock extends Component {
         }
     }
 
-    // Init
 	componentDidMount() {
 		window.addEventListener('scroll', this.handleSticky);
 		this.handleSticky();
@@ -67,7 +68,18 @@ class TextBlock extends Component {
                                     <div className="col-md-7 col-sm-12 schedule-inputs">
                                         <div className="d-flex schedule">
                                             <span className="schedule--date" >
-                                                <DayPickerInput onDayChange={ this.handleDayChange }/>
+                                                <DayPickerInput
+                                                    dayPickerProps={{
+                                                        disabledDays: { daysOfWeek: [1,2,3] },
+                                                        localeUtils: MomentLocaleUtils,
+                                                        fromMonth: new Date(2019, 3),
+                                                        firstDayOfWeek: 1,
+                                                    }}
+                                                    formatDate={formatDate}
+                                                    parseDate={parseDate}
+                                                    format="LL"
+                                                    placeholder={'TODAY'}
+                                                />
                                             </span>
                                             <Dropdown className="schedule--time">
                                                 <Dropdown.Toggle id="schedule" type="button" data-toggle="dropdown">{ this.state.time }</Dropdown.Toggle>
