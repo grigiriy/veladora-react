@@ -77,6 +77,7 @@
 }
 .persons-input input {
     text-align: center;
+    border: solid 1px #ececec!important;
 }
 .persons-input span {
     border: solid 1px #ececec;
@@ -226,6 +227,24 @@ input#persons {
 .DayPickerInput input {
     width: 201px;
 }
+
+.book-enter._success {
+  transform: translateY(80px);
+  opacity: 0;
+  transition: all 1s;
+}
+/* === */
+.book-enter-active._success {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+._success {
+    text-align: center;
+    transform: translateY(0);
+    opacity: 1;
+}
+
 @media(min-width: 769px) {
     .book-screen{
         height: calc(100vh + 900px);
