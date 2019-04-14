@@ -55,7 +55,15 @@
         width: 100vw;
     }
 }
-
+form input:focus,
+form button:focus {
+    outline:none!important;
+    box-shadow: none!important;
+}
+form button:active {
+    background: inherit!important;
+    color: inherit!important;
+}
 form input,
 .schedule--time>button {
     border: solid 1px #ececec!important;
