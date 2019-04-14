@@ -61,6 +61,14 @@
     .menu-text .text-block{
         padding: 40px 0;
     }
+    .menuSubtitle.set:after{
+        width: 85px;
+        margin-left: -85px;
+    }
+    .menuSubtitle.weekend:after{
+        width: 145px;
+        margin-left: 55px;
+    }
 }
 
 .menu-item {
