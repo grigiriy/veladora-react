@@ -13,6 +13,7 @@ class TextBlock extends Component {
         sticky: false,
         persons: 1,
         day: 'Today',
+        time: '19:00',
         calend: false,
     };
 
@@ -32,15 +33,27 @@ class TextBlock extends Component {
             this.setState({ persons: this.state.persons - 1 });
         }
     }
-    // toggleCalend() {
-    //     let toggledCalend = !this.state.calend;
-    //     this.setState({ calend: true });
-    //     if (!this.state.popupVisible) {
-    //       document.addEventListener('click', this.handleOutsideClick, false);
-    //     } else {
-    //       document.removeEventListener('click', this.handleOutsideClick, false);
-    //     }
-    // }
+
+    toggleCalend() {
+        // let toggledCalend = !this.state.calend;
+        this.setState({ calend: true });
+        if (!this.state.calend) {
+          document.addEventListener('click', this.handleOutsideClick, false);
+        } else {
+          document.removeEventListener('click', this.handleOutsideClick, false);
+        }
+        this.setState(prevState => ({
+           calend: !prevState.calend,
+        }));
+      }
+      toggleCalendOutside(e) {
+        // ignore clicks on the component itself
+        if (this.node.contains(e.target)) {
+          return;
+        }
+
+        this.toggleCalend();
+    }
 
     // Init
 	componentDidMount() {
@@ -61,7 +74,7 @@ class TextBlock extends Component {
             </Col>
             <Col sml={12} className="mx-auto d-flex z-10">
                 <form  style={{minHeight:'650px'}} id="form">
-                    <span className="_form">
+                    <span className="_form" id="huy" data-time="12">
                         <h2 className="text-center">Book a table</h2>
                         <p className="text-center">Three days a week, from Thursday to Saturday, we serve set-dinner on pre-reservation.</p>
                         <div className="d-flex text-block">
@@ -75,12 +88,12 @@ class TextBlock extends Component {
                                                 { this.state.calend && (<DayPicker onDayClick={(day) => this.setState({ day })} />) }
                                             </span>
                                             <Dropdown className="schedule--time">
-                                                <Dropdown.Toggle id="schedule" type="button" data-toggle="dropdown">19:00</Dropdown.Toggle>
+                                                <Dropdown.Toggle id="schedule" type="button" data-toggle="dropdown">{this.state.time}</Dropdown.Toggle>
                                                 <Dropdown.Menu aria-labelledby="dropdownMenuButton">
                                                     <div className="dropdown-wrap">
-                                                        <Dropdown.Item data-time="19:00">19:00</Dropdown.Item>
-                                                        <Dropdown.Item data-time="20:00">20:00</Dropdown.Item>
-                                                        <Dropdown.Item data-time="21:00">21:00</Dropdown.Item>
+                                                        <Dropdown.Item onClick={ () => this.setState({time: '19:00'}) }>19:00</Dropdown.Item>
+                                                        <Dropdown.Item onClick={ () => this.setState({time: '20:00'}) }>20:00</Dropdown.Item>
+                                                        <Dropdown.Item onClick={ () => this.setState({time: '21:00'}) }>21:00</Dropdown.Item>
                                                     </div>
                                                 </Dropdown.Menu>
                                             </Dropdown>
