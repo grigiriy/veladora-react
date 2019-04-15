@@ -24,8 +24,8 @@ class Tacos extends Component {
         const slider_2 = Content.slider_2;
 
         return <>
-        <Header page={this.state.page}/>
-            <Row className="screen pt-5">
+            <Header page={this.state.page}/>
+            <Row className="screen _fst">
                 <Col>
                     <Slider slider={slider_1} firstScreen={true} />
                 </Col>

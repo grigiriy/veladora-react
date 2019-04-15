@@ -27,8 +27,8 @@ class Cantina extends Component {
         const video = Content.video;
 
         return <>
-        <Header page={ this.state.page }/>
-            <Row className="screen">
+            <Header page={ this.state.page }/>
+            <Row className="screen _fst">
                 <Col md={12} lg={6}>
                 <ReactCSSTransitionGroup
                     transitionName = 'slider'
