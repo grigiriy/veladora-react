@@ -33,7 +33,7 @@ class Cantina extends Component {
                 <ReactCSSTransitionGroup
                     transitionName = 'slider'
                     transitionAppear = {true}
-                    transitionAppearTimeout={100}
+                    transitionAppearTimeout={200}
                     transitionEnter={false}
                     transitionLeave={false}
                 >

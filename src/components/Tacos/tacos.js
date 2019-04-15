@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col, Container} from 'react-bootstrap';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import Header from '../header';
 import Footer from '../footer';
@@ -27,7 +28,15 @@ class Tacos extends Component {
             <Header page={this.state.page}/>
             <Row className="screen _fst">
                 <Col>
-                    <SliderBlock slider={slider_1} firstScreen={true} />
+                    <ReactCSSTransitionGroup
+                        transitionName = 'slider'
+                        transitionAppear = {true}
+                        transitionAppearTimeout={200}
+                        transitionEnter={false}
+                        transitionLeave={false}
+                    >
+                        <SliderBlock slider={slider_1} firstScreen={true} />
+                    </ReactCSSTransitionGroup>
                 </Col>
                 <Col>
                     <TextBlock content={first_block} firstScreen={true} page={this.state.page}/>
@@ -47,7 +56,7 @@ class Tacos extends Component {
             <Row>
                 <Footer />
             </Row>
-        </Container>
+            </Container>
     }
 }
 export default Tacos
