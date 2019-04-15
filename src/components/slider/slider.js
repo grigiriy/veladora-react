@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import {Row, Carousel} from 'react-bootstrap';
 import  './slider.css';
+import Slider from 'react-slick';
 
-class Slider extends Component {
+class SliderBlock extends Component {
 
     state = {
         firstScreen: this.props.firstScreen,
@@ -60,4 +61,4 @@ class Slider extends Component {
     }
 }
 
-export default Slider;
+export default SliderBlock;

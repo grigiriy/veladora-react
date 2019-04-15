@@ -1,3 +1,3 @@
-import Slider from './slider';
+import SliderBlock from './slider';
 
-export default Slider;
+export default SliderBlock;

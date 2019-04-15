@@ -4,7 +4,7 @@ import {Row, Col} from 'react-bootstrap';
 import Header from '../header';
 import Footer from '../footer';
 import TextBlock from '../textBlock';
-import Slider from '../slider';
+import SliderBlock from '../slider';
 import Menu from '../menu';
 import MapBlock from '../map';
 
@@ -27,7 +27,7 @@ class Tacos extends Component {
             <Header page={this.state.page}/>
             <Row className="screen _fst">
                 <Col>
-                    <Slider slider={slider_1} firstScreen={true} />
+                    <SliderBlock slider={slider_1} firstScreen={true} />
                 </Col>
                 <Col>
                     <TextBlock content={first_block} firstScreen={true} page={this.state.page}/>
@@ -38,7 +38,7 @@ class Tacos extends Component {
                     <Menu />
                 </Col>
                 <Col className="menu-pics">
-                    <Slider slider={slider_2 }/>
+                    <SliderBlock slider={slider_2 }/>
                 </Col>
             </Row>
             <MapBlock />

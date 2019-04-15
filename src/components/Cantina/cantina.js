@@ -5,7 +5,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Header from '../header';
 import Footer from '../footer';
 import TextBlock from '../textBlock';
-import Slider from '../slider';
+import SliderBlock from '../slider';
 import Menu from '../menu';
 import VideoBlock from '../videoBlock';
 import Book from '../book';
@@ -37,7 +37,7 @@ class Cantina extends Component {
                     transitionEnter={false}
                     transitionLeave={false}
                 >
-                    <Slider slider={ slider_1 } firstScreen={true}/>
+                    <SliderBlock slider={ slider_1 } firstScreen={true}/>
                 </ReactCSSTransitionGroup>
                 </Col>
                 <Col md={12} lg={6}>
@@ -50,7 +50,7 @@ class Cantina extends Component {
                     <Menu />
                 </Col>
                 <Col className="menu-pics" md={12} lg={6}>
-                    <Slider slider={ slider_2 }/>
+                    <SliderBlock slider={ slider_2 }/>
                 </Col>
             </Row>
             <VideoBlock video={ video }/>
