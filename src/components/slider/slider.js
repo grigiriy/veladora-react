@@ -8,7 +8,6 @@ class SliderBlock extends Component {
     state = {
         firstScreen: this.props.firstScreen,
         sticky: false,
-        slider: 'slicker',
         index: 0,
         prevIndex: '-1'
     };
