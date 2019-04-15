@@ -38,7 +38,7 @@ class Tacos extends Component {
                     <Menu />
                 </Col>
                 <Col className="menu-pics">
-                    <SliderBlock slider={slider_2 }/>
+                    <SliderBlock slider={slider_2 } page={this.state.page}/>
                 </Col>
             </Row>
             <MapBlock />
