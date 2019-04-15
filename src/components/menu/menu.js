@@ -22,7 +22,6 @@ toggleMenu = (a) => {
         // const weekend = Content.weekend;
 
         return <>
-        <Col className="menu-text">
             <div className="wrapper d-flex text-block">
                     <h2 className="text-center menuTitle">Set menu</h2>
                     <Row className={"mx-auto w-100 menuSubtitle " + (this.state.menu === 'set' ? 'set' : 'weekend')} style={{justifyContent: 'center'}}>
@@ -47,7 +46,6 @@ toggleMenu = (a) => {
                         </Col>
                     </Row>
             </div>
-        </Col>
     </>
     }
 }

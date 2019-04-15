@@ -97,7 +97,7 @@
         background: linear-gradient(-60deg, white 50%, rgba(71, 142, 54, 0.16) 50%);
     }
     .video-back .text{
-        margin: 0 15px;
+        margin: 0;
     }
 }
 
