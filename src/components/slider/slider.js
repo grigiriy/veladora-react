@@ -54,7 +54,7 @@ class SliderBlock extends Component {
                 nextIcon={<span></span>}
                 prevIcon={<span></span>}
                 id={"slider_" + counter}
-                className="slide col"
+                className="slide"
                 onSelect={this.handleSelect}
                 wrap={false}
                 interval={null}

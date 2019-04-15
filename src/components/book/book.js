@@ -61,7 +61,7 @@ class TextBlock extends Component {
             <Col sm={ 12 } className="mobile mobile_book_pic w-100">
                 <img src={ img } alt="" style={{ maxWidth:'100%' }} />
             </Col>
-            <Col sml={ 12 } className="mx-auto d-flex z-10">
+            <Col sm={ 12 } className="mx-auto d-flex z-10 book_text">
                 <form  style={{ minHeight:'650px' }} id="form">
                 <ReactCSSTransitionGroup
                     transitionName="book"

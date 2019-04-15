@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import Header from '../header';
@@ -26,7 +26,7 @@ class Cantina extends Component {
         const slider_2 = Content.slider_2;
         const video = Content.video;
 
-        return <>
+        return <Container fluid={true}>
             <Header page={ this.state.page }/>
             <Row className="screen _fst">
                 <Col md={12} lg={6}>
@@ -54,9 +54,13 @@ class Cantina extends Component {
                 </Col>
             </Row>
             <VideoBlock video={ video }/>
-            <MapBlock />
-            <Footer />
-        </>
+            <Row>
+                <MapBlock />
+            </Row>
+            <Row>
+                <Footer />
+            </Row>
+        </Container>
     }
 }
 export default Cantina

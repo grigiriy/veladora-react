@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Row, Col} from 'react-bootstrap';
+import { Row, Col, Container} from 'react-bootstrap';
 
 import Header from '../header';
 import Footer from '../footer';
@@ -23,7 +23,7 @@ class Tacos extends Component {
         const slider_1 = Content.slider_1;
         const slider_2 = Content.slider_2;
 
-        return <>
+        return <Container fluid={true}>
             <Header page={this.state.page}/>
             <Row className="screen _fst">
                 <Col>
@@ -41,9 +41,13 @@ class Tacos extends Component {
                     <SliderBlock slider={slider_2 } page={this.state.page}/>
                 </Col>
             </Row>
-            <MapBlock />
-            <Footer />
-        </>
+            <Row>
+                <MapBlock />
+            </Row>
+            <Row>
+                <Footer />
+            </Row>
+        </Container>
     }
 }
 export default Tacos

@@ -4,8 +4,6 @@ import React, { Component } from 'react';
 import { Modal, Row, Col } from 'react-bootstrap';
 import { HashLink } from 'react-router-hash-link';
 
-import  './popUp/popUp.css';
-
 import cross from '../../assets/img/cross.svg';
 
 class Item extends Component {
