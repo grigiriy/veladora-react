@@ -234,16 +234,30 @@ input#persons {
   opacity: 0;
   transition: all 1s;
 }
+.book-enter._success svg{
+    transform: scale(0.5);
+}
+.book-enter.book-enter-active._success svg{
+    transform: scale(1);
+}
 /* === */
-.book-enter-active._success {
+.book-enter.book-enter-active._success {
     transform: translateY(0);
     opacity: 1;
 }
 
+._success svg{
+    transition: all 0.5s;
+    position: absolute;
+    width:100%;
+    left:0;
+    margin-top: -150px;
+}
 ._success {
     text-align: center;
     transform: translateY(0);
     opacity: 1;
+    padding-top: 150px;
 }
 
 @media(min-width: 769px) {
