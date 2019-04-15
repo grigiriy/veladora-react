@@ -28,10 +28,10 @@ class MainPage extends Component {
     }
 
     componentDidMount() {
-        document.querySelector('body').classList.add('noscroll');
+        document.querySelector('body').classList.add('noscroll', 'index');
     }
     componentWillUnmount() {
-        document.querySelector('body').classList.remove('noscroll');
+        document.querySelector('body').classList.remove('noscroll', 'index');
     }
 
     render() {

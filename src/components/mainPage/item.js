@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Col} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, history} from 'react-router-dom';
 
 import arrow from '../../assets/img/arrow-next.svg';
 
@@ -14,9 +14,20 @@ let tacos = {
     linkTo: '/tacos',
 }
 
+
 class Item extends Component {
     state = {
     };
+
+
+    fadeInIndex = (e) => {
+        let outBack = document.querySelector('.main-screen');
+        let outFront = document.querySelector('.backImg');
+
+        outBack.classList.add('_out');
+        outFront.classList.add('_out');
+
+    }
 
     render() {
         const page = this.props.page;
@@ -24,9 +35,10 @@ class Item extends Component {
         return <>
         <Col className={"item d-flex " + this.props.page}>
         <Link
-            to={ content.linkTo }
             data-back={ content.back }
             className="w-100 my-auto"
+            onClick={ () => this.fadeInIndex() }
+            to={ content.linkTo }
         >
             <div className="title"><p><span>{ content.header }</span></p></div>
             <div className="subtitle">

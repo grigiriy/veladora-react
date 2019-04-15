@@ -96,10 +96,12 @@
 .anim-appear+.backImg {
     transform: scale(0.9);
     transition: 2s;
+    opacity: 0;
 }
 /* === */
 .anim-appear.anim-appear-active+.backImg {
     transform: scale(1);
+    opacity: 1;
 }
 .anim-appear.anim-appear-active,
 .anim-appear.anim-appear-active div {
@@ -149,6 +151,12 @@
 }
 .backImg+.container-fluid {
     z-index: 10;
+}
+.backImg._out {
+    opacity: 0;
+}
+.main-screen._out {
+    background: #fff;
 }
 @media (max-width:1024px) {
     .anim-appear .item .title {
