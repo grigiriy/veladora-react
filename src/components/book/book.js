@@ -113,7 +113,6 @@ class TextBlock extends Component {
                                 </div>
                                 <MaskedInput type="phone" placeholder="phone number" className="w-100" />
                             </div>
-                            <button id="confirm" onClick={ () => this.setState({sent: true}) }>book now</button>
                         </div>
                     </div>
                     ) }

@@ -95,7 +95,7 @@ input#persons {
     border-left-color: transparent;
     border-right-color: transparent;
 }
-.inputs + button{
+.inputs + button {
     padding: 16px;
     background: #000;
     color: #fff;
@@ -159,7 +159,7 @@ input#persons {
 .z-10{
     z-index: 10;
 }
-.schedule--time{
+.schedule--time {
     margin-left: auto;
 }
 .DayPicker {
@@ -179,7 +179,7 @@ input#persons {
 .DayPicker-Day {
     text-align: center;
 }
-.DayPicker-Caption{
+.DayPicker-Caption {
     margin-top: 10px;
     text-transform: uppercase;
     font-weight: bolder;
@@ -246,7 +246,7 @@ input#persons {
 }
 
 @media(min-width: 769px) {
-    .book-screen{
+    .book-screen {
         height: calc(100vh + 900px);
         justify-content: flex-end;
         flex-direction: column;
