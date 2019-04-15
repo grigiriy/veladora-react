@@ -39,7 +39,7 @@ class MainPage extends Component {
         <ReactCSSTransitionGroup
             transitionName="anim"
             transitionAppear={ true }
-            transitionAppearTimeout={ 30000 }
+            transitionAppearTimeout={ 300 }
             transitionEnter={ false }
             transitionLeave={ false }
         >
@@ -51,7 +51,7 @@ class MainPage extends Component {
                 <Col md={12} className="logo mx-auto py-5">
                     <img src={logo} alt="veladora" />
                 </Col>
-                    <Col className="index-block d-flex pt-5" >
+                    <Col className="index-block d-flex mainLink" >
                         <Row className="w-100 centred">
                             <Col md={ 6 } sm={ 12 }
                                 onMouseEnter={ () => this.mouseEnter('tacos') }
@@ -59,6 +59,7 @@ class MainPage extends Component {
                             >
                                 <Item page={ 'tacos' } />
                             </Col>
+                            <div id="divider"></div>
                             <Col md={ 6 } sm={ 12 }
                                 onMouseEnter={ () => this.mouseEnter('cantina') }
                                 onMouseLeave={ () => this.mouseLeave() }

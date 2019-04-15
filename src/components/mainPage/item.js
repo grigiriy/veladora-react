@@ -36,7 +36,7 @@ class Item extends Component {
         <Col className={"item d-flex " + this.props.page}>
         <Link
             data-back={ content.back }
-            className="w-100 my-auto"
+            className="w-100 my-auto pt-3"
             onClick={ () => this.fadeInIndex() }
             to={ content.linkTo }
         >
