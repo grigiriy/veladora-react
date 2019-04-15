@@ -1,4 +1,4 @@
-.menu-text .text-block{
+.menu-text .text-block {
     padding: 20% 5%;
     justify-content: flex-start;
 }
@@ -15,13 +15,15 @@
     font-weight: bolder;
     margin: 10px;
     transition: all 0.3s;
-
+}
+.menu-list {
+    min-height: 100vh;
 }
 .menuSubtitle.set .menu-toggle.set,
 .menuSubtitle.weekend .menu-toggle.weekend {
     opacity: 1;
 }
-.menuSubtitle:after{
+.menuSubtitle:after {
     content: ' ';
     border-bottom: solid 1px #c7c7c7;
     position: absolute;
@@ -30,11 +32,11 @@
     height: 25px;
     transition: all 0.5s;
 }
-.menuSubtitle.set:after{
+.menuSubtitle.set:after {
     width: 75px;
     margin-left: -125px;
 }
-.menuSubtitle.weekend:after{
+.menuSubtitle.weekend:after {
     width: 120px;
     margin-left: 85px;
 }
@@ -46,62 +48,77 @@
 }
 ._vg {
     white-space: nowrap;
-    padding-left: 15px;
+    /* padding-left: 15px; */
 }
 .menu-item span:last-child {
     opacity: 0.4;
 }
-.menuTitle{
+.menuTitle {
     margin-bottom: 10px
 }
-.menuSubtitle{
+.menuSubtitle {
     margin-bottom: 55px;
 }
-@media(max-width:768px){
-    .menu-text .text-block{
-        padding: 40px 0;
-    }
-    .menuSubtitle.set:after{
-        width: 85px;
-        margin-left: -85px;
-    }
-    .menuSubtitle.weekend:after{
-        width: 145px;
-        margin-left: 55px;
-    }
-}
-
 .menu-item {
     transition: 3s;
     height: 77px;
 }
 .menu-item span {
-    position: absolute;
     padding-top: 25px;
+    padding-right: 20px;
 }
 .menu-item span._vg {
     right: 0;
+    padding-right: 0;
 }
-.example-enter span{
-    opacity: 0;
-    height: 0;
-    transform: translateY('-50px');
+
+.menu-item {
+    transition: all .6s
 }
-.example-enter.example-enter-active span{
+.menu-appear.menu-item {
+    /* background: red; */
+    transform: translateY(50px);
+}
+.menu-appear.menu-appear-active.menu-item {
+    /* background: orange; */
+    transform: translateY(0);
+}
+.menu-enter.menu-item {
+    /* background: yellow; */
+    opacity: 0.5;
+    transform: translateY(30px);
+}
+.menu-enter.menu-enter-active.menu-item {
+    /* background: green; */
     opacity: 1;
     transform: translateY(0);
 }
-.example-leave span{
+.menu-leave.menu-item {
+    /* background: blue; */
+    transition: all .2s;
     opacity: 1;
+    /* transform: translateY(0); */
 }
-.example-leave.example-leave-active span{
+.menu-leave.menu-leave-active.menu-item {
+    /* background: purple; */
     opacity: 0;
-    height: 0;
+    transform: translateY(-30px);
 }
-.example-appear span{
-    opacity: 0;
-    height: 0;
-}
-.example-appear.example-appear-active span{
-    opacity: 1;
+
+@media(max-width:768px) {
+    .menu-text .text-block{
+        padding: 40px 0;
+    }
+    .menuSubtitle.set:after {
+        width: 85px;
+        margin-left: -85px;
+    }
+    .menuSubtitle.weekend:after {
+        width: 145px;
+        margin-left: 55px;
+    }
+    .menu-item span._vg {
+        /* padding-right: 20px!important; */
+        /* right:20px; */
+    }
 }

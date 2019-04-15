@@ -13,8 +13,12 @@ class Menu extends Component {
     };
 
 toggleMenu = (a) => {
-    this.state.menu === 'set' ? this.setState({ menu: 'weekend' }) : this.setState({ menu: 'set' });
-    this.state.menu === 'set' ? this.setState({ items: Content.weekend }) : this.setState({ items: Content.set });
+    this.setState({ items: [] });
+    let that = this;
+    setTimeout(function(){
+        that.state.menu === 'set' ? that.setState({ menu: 'weekend' }) : that.setState({ menu: 'set' });
+        that.state.menu === 'set' ? that.setState({ items: Content.weekend }) : that.setState({ items: Content.set });
+    }, 200);
 }
 
     render() {
@@ -32,11 +36,12 @@ toggleMenu = (a) => {
                         <Col md={10} className="mx-auto px-sm-0">
                             <div className="menu-list">
                                     <ReactCSSTransitionGroup
-                                        transitionName="example"
+                                        transitionName="menu"
+                                        transitionAppear = { false }
                                         transitionEnter = { true }
-                                        transitionEnterTimeout = { 400 }
-                                        transitionLeaveTimeout = { 400 }
-                                        transitionAppearTimeout = { 400 }
+                                        transitionLeave = { true }
+                                        transitionEnterTimeout = { 100 }
+                                        transitionLeaveTimeout = { 100 }
                                     >
                                 { (this.state.items).map((item, index) =>
                                     <Item menu = { this.state.menu } item = { item } key = { this.state.menu + index } />
