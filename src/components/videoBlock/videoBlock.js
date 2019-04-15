@@ -26,7 +26,7 @@ class VideoBlock extends Component {
         const { video_3 } = this.props.video;
         const { video_4 } = this.props.video;
 
-        var settings = {
+        const settings = {
           dots: false,
           infinite: false,
           speed: 300,
