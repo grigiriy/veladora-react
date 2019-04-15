@@ -11,6 +11,7 @@
     width: 720px;
     margin: 0 auto 150px;
     align-self: flex-end;
+    min-height: 650px;
 }
 .inputs input:focus,
 .inputs button:focus {
@@ -300,6 +301,8 @@ input#persons {
     }
     .book-screen form {
         margin: 0;
+        min-height: 0;
+        width: 100%;
     }
     .book-screen h2 {
         font-size: 42px;
@@ -308,7 +311,17 @@ input#persons {
         padding: 20px 15px;
     }
     .schedule--time {
+        width: 120px;
+    }
+    .schedule--date,
+    .DayPickerInput {
+        width: calc( 100% - 20px );
+    }
+    .DayPickerInput input {
         width: 100%;
+    }
+    .schedule--date::before {
+        margin-right: 145px;
     }
     .schedule--time>button {
         max-width: none;
@@ -320,5 +333,32 @@ input#persons {
     }
     form p {
         padding: 0 15px;
+    }
+    .persons-input {
+        margin: 16px;
+        border: solid 1px #ececec;
+        max-width: calc( 100% - 30px );
+    }
+    .persons-input span,
+    .persons-input input {
+        border: none!important;
+    }
+    .persons-input span {
+        color: #c7c7c7;
+    }
+    .persons-input input {
+        color: #000;
+        opacity: 1;
+    }
+    .schedule--time::before{
+        margin-right: 25px;
+    }
+    .persons-input span:first-child {
+        padding-left: 5px;
+        padding-right: 35px;
+    }
+    .persons-input span:last-child {
+        padding-left: 35px;
+        padding-right: 5px;
     }
 }

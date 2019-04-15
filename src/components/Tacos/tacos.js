@@ -34,10 +34,10 @@ class Tacos extends Component {
                 </Col>
             </Row>
             <Row className="screen" id="menu">
-                <Col className="menu-text">
+                <Col className="menu-text mo-2">
                     <Menu />
                 </Col>
-                <Col className="menu-pics">
+                <Col className="menu-pics mo-1">
                     <SliderBlock slider={slider_2 } page={this.state.page}/>
                 </Col>
             </Row>

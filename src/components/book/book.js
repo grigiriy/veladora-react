@@ -62,7 +62,7 @@ class TextBlock extends Component {
                 <img src={ img } alt="" style={{ maxWidth:'100%' }} />
             </Col>
             <Col sm={ 12 } className="mx-auto d-flex z-10 book_text">
-                <form  style={{ minHeight:'650px' }} id="form">
+                <form id="form">
                 <ReactCSSTransitionGroup
                     transitionName="book"
                     transitionAppear = { false }
@@ -77,7 +77,7 @@ class TextBlock extends Component {
                             <div className="inputs">
                                 <input type="text" placeholder="name" className="w-100" />
                                 <div className="line-inputs row">
-                                    <div className="col-md-7 col-sm-12 schedule-inputs">
+                                    <Col className="schedule-inputs" lg={7} md={12}>
                                         <div className="d-flex schedule">
                                             <span className="schedule--date" >
                                                 <DayPickerInput
@@ -104,12 +104,12 @@ class TextBlock extends Component {
                                                 </Dropdown.Menu>
                                             </Dropdown>
                                         </div>
-                                    </div>
-                                    <div className="persons-input col-md-5 col-sm-12">
+                                    </Col>
+                                    <Col className="persons-input" lg={5} md={12}>
                                         <span id="minus" onClick={ () => this.removePerson() }>-</span>
                                             <input type="text"  placeholder="persons" id="persons" value={ persons } disabled />
                                         <span id="plus" onClick={ () => this.addPerson() }>+</span>
-                                    </div>
+                                    </Col>
                                 </div>
                                 <MaskedInput type="phone" placeholder="phone number" className="w-100" />
                             </div>

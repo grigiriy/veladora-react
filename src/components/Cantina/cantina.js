@@ -29,7 +29,7 @@ class Cantina extends Component {
         return <Container fluid={true}>
             <Header page={ this.state.page }/>
             <Row className="screen _fst">
-                <Col md={12} lg={6}>
+                <Col>
                 <ReactCSSTransitionGroup
                     transitionName = 'slider'
                     transitionAppear = {true}
@@ -40,16 +40,16 @@ class Cantina extends Component {
                     <SliderBlock slider={ slider_1 } firstScreen={true}/>
                 </ReactCSSTransitionGroup>
                 </Col>
-                <Col md={12} lg={6}>
+                <Col>
                     <TextBlock content={ first_block } firstScreen={ true } page={ this.state.page }/>
                 </Col>
             </Row>
             <Book />
             <Row className="screen" id="menu">
-                <Col className="menu-text" md={12} lg={6}>
+                <Col className="menu-text mo-2">
                     <Menu />
                 </Col>
-                <Col className="menu-pics" md={12} lg={6}>
+                <Col className="menu-pics mo-1">
                     <SliderBlock slider={ slider_2 }/>
                 </Col>
             </Row>
