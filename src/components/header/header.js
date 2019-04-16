@@ -58,7 +58,7 @@ class Header extends Component {
                   <Link className="nav-link" to="/tacos">Tacos Y Tragos</Link>
                 </li>
                 <li className="nav-item ml-lg-auto nav-book" >
-                    <HashLink className="nav-link" smooth to="#form">Book a&nbsp;table</HashLink>
+                    <HashLink className="nav-link" to="#form" smooth>Book a&nbsp;table</HashLink>
                 </li>
                 <li className="nav-item nav-lang">
                   <Link className="nav-link" to="#lang" onClick={this.langToggle}>{ lang }</Link>

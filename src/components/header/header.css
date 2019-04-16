@@ -3,7 +3,8 @@
     z-index: 1051;
     height: 62px;
     padding-bottom: 0px;
-    background-image: url(../../assets/img/rectangle_big.svg);
+    /* background-image: url(../../assets/img/rectangle_big.svg); */
+    background-image: url(../../assets/img/triangle_big.svg);
     background-repeat: no-repeat;
     background-position-y: -2px;
     background-position-x: -10px;
@@ -13,8 +14,11 @@
 .nav.navbar.index{
     display: none!important;
 }
-.nav.navbar.tacos{
-    background-position-x: calc(50% + 200px);
+.nav.navbar.cantina{
+    background-position-x: calc(50% - 50px);
+}
+.nav.navbar.tacos {
+    background-position-x: calc(50% + 90px);
 }
 .nav-lang{
     border-left: solid 1px #0000001a;
@@ -42,9 +46,6 @@
 }
 .nav li.toggle.active a{
     opacity: 0.5;
-}
-.nav.cantina {
-    background-position-x: calc(50% + 65px);
 }
 .nav.tacos .nav-book{
     visibility: hidden;

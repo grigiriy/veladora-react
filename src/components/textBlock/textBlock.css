@@ -26,18 +26,18 @@
     opacity: 0;
     transition: all 0.5s;
 }
-#add_text.shown{
+#add_text.shown {
     opacity: 1;
     transition: all 2s;
 }
-#add_text p{
+#add_text p {
     margin-top: -12rem;
     transition: all 1s;
 }
-.tacos #add_text p{
+.tacos #add_text p {
     margin-top: -10rem;
 }
-#add_text.shown p{
+#add_text.shown p {
     margin-top: 0;
 }
 .read-more {
@@ -69,7 +69,7 @@
 }
 
 /* === */
-._an{
+._an {
   transition: all 1s ease;
 }
  .text-appear ._an{
@@ -77,48 +77,49 @@
   opacity: 0;
 }
 /* === */
- .text-appear.header-appear-active ._an{
+ .text-appear.header-appear-active ._an {
   padding-top: 0;
   opacity: 1;
 }
-@media(min-width: 1024px) and (max-width: 1280px){
+@media(min-width: 1024px) and (max-width: 1280px) {
     .cantina h1,
-    .tacos h1{
+    .tacos h1 {
         padding-top: 0;
+        padding-bottom:0;
     }
 }
-@media(max-width: 1024px){
+@media(max-width: 1024px) {
     .text-block.h-480 {
         /* overflow-y: scroll; */
          padding: 0 20px;
          margin-top: 130px;
     }
-    #add_text p{
+    #add_text p {
         margin-top: -9rem;
     }
-    .tacos #add_text p{
+    .tacos #add_text p {
         margin-top: -7rem;
     }
-    #add_text.shown p{
+    #add_text.shown p {
         margin-top: 0;
     }
 }
-@media(max-width:1439px){
+@media(max-width:1439px) {
     .text-block.h-480 {
         height: 500px;
     }
 }
-@media(max-width:768px){
-    .text-block{
+@media(max-width:768px) {
+    .text-block {
         padding: 40px 15px 0;
     }
-    .text-block h1{
+    .text-block h1 {
         font-size: 42px;
     }
-    .text-block .label{
+    .text-block .label {
         font-size: 10px;
     }
-    .text-block p{
+    .text-block p {
         font-size: 17px;
     }
     .text-block.h-480 {
@@ -126,14 +127,14 @@
         padding: 0 0 20px;
         margin-top: 20px;
     }
-    #add_text p{
-        margin-top: -12rem;
+    #add_text p {
+        margin-top: -10rem;
     }
-    .tacos #add_text p{
+    .tacos #add_text p {
         margin-top: -9rem;
     }
     #add_text.shown p,
-    .tacos #add_text.shown p{
+    .tacos #add_text.shown p {
         margin-top: 0;
     }
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Row, Carousel} from 'react-bootstrap';
 import  './slider.css';
 // import Slider from 'react-slick';
+const cw = window.innerWidth;
 
 class SliderBlock extends Component {
 
@@ -9,7 +10,8 @@ class SliderBlock extends Component {
         firstScreen: this.props.firstScreen,
         sticky: false,
         index: 0,
-        prevIndex: '-1'
+        prevIndex: '-1',
+        mobile: cw < 1024 ? true : false
     };
 
     handleSelect = (selectedIndex) => {
@@ -50,6 +52,10 @@ class SliderBlock extends Component {
         const { index } = this.state;
 
         return <Row className={sticky + ' index_' + index}>
+        {( this.state.mobile && !this.state.firstScreen) ? (
+            <div className="d-block zaglushkaSliderMobile" style={{backgroundImage: 'url(' + slide[0] + ')' }}></div>
+        ) : (
+            <>
             <Carousel
                 nextIcon={<span></span>}
                 prevIcon={<span></span>}
@@ -74,6 +80,8 @@ class SliderBlock extends Component {
               <li><div /></li>
               <li><div /></li>
             </ol>
+            </>
+            )}
         </Row>
     }
 }

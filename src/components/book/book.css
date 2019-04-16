@@ -14,9 +14,10 @@
     min-height: 650px;
 }
 .inputs input:focus,
-.inputs button:focus {
+.inputs button:focus,
+.inputs+button:focus {
     outline:none;
-    box-shadow: none;
+    box-shadow: none!important;
 }
 .inputs button:active {
     background: inherit;
@@ -102,7 +103,7 @@ input#persons {
     color: #fff;
     border: none;
     transition: all 0.3s;
-    border: solid 2px transparent;
+    border: solid 1px transparent;
 }
 .dropdown {
     position: static;
@@ -302,6 +303,17 @@ input#persons {
     }
 }
 @media(max-width:768px) {
+    .schedule--time button {
+         width: 100px;
+         max-width: none;
+    }
+    .dropdown-menu.show .dropdown-wrap{
+         right: 0;
+         float: right;
+         width: 100px;
+         margin-right: 10px;
+         max-width: none;
+    }
     .mobile_book_pic,
     .book_text {
         padding: 0;
@@ -336,14 +348,6 @@ input#persons {
     }
     .schedule--date::before {
         margin-right: 145px;
-    }
-    .schedule--time>button {
-        max-width: none;
-        width: 100%;
-    }
-    .dropdown-menu.show .dropdown-wrap {
-        max-width: none;
-        margin-right: 30px;
     }
     form p {
         padding: 0 15px;

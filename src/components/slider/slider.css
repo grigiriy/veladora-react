@@ -69,10 +69,10 @@
 .carousel-control-next,
 .carousel-control-prev {
     width: 50% !important;
-    cursor: url(../../assets/img/arrow-next.svg), auto;
+    cursor: url(../../assets/img/arrow_next.svg), auto;
 }
 .carousel-control-prev {
-    cursor: url(../../assets/img/arrow-prev.svg), auto;
+    cursor: url(../../assets/img/arrow_prev.svg), auto;
 }
 .sticky {
     position: -webkit-sticky;
@@ -83,5 +83,10 @@
     .carousel-inner {
         width: 100vw;
         height: calc( 90vh - 48px);
+    }
+    .zaglushkaSliderMobile{
+        width: 100vw!important;
+        height: 50vh;
+        background-size: cover;
     }
 }

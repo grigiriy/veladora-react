@@ -2,7 +2,6 @@
     padding: 20% 5%;
     justify-content: flex-start;
 }
-
 .menu-toggle {
     height: 13px;
     font-size: 11px;
@@ -19,9 +18,10 @@
 .menu-list {
     min-height: 60vh;
 }
-.menuSubtitle.set .menu-toggle.set,
-.menuSubtitle.weekend .menu-toggle.weekend {
+.menuSubtitle.weekend .menu-toggle.set,
+.menuSubtitle.set .menu-toggle.weekend {
     opacity: 1;
+    cursor:default;
 }
 .menuSubtitle:after {
     content: ' ';
@@ -29,8 +29,9 @@
     position: absolute;
     margin: 0;
     width: 100px;
-    height: 25px;
+    height: 2px;
     transition: all 0.5s;
+    margin-top: 20px
 }
 .menuSubtitle.set:after {
     width: 75px;

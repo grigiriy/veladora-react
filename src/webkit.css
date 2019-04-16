@@ -1,0 +1,20 @@
+@media(min-width:768px){
+    footer.index{
+        padding-bottom: 30px
+    }
+    .anim-appear .logo{
+        margin-top: -140px;
+    }
+    .anim-appear.anim-appear-active .logo,
+    .logo{
+        margin-top: -200px
+    }
+    .menu-text .menuSubtitle.weekend:after{
+        margin-left:43px;
+        width: 120px;
+    }
+    .menu-text .menuSubtitle.set:after{
+        margin-left:-65px;
+        width: 75px;
+    }
+}

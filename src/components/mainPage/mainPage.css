@@ -52,9 +52,6 @@
     color: #fff;
     margin: 0 auto 10px;
 }
-.subtitle img {
-    max-width: 20px;
-}
 .centred {
     height: 100%;
 }
@@ -234,6 +231,12 @@
     .item:hover .subtitle {
         opacity: 1!important;
     }
+    .anim-appear #divider {
+        height: 10px;
+    }
+    .anim-appear-active #divider{
+        height: 350px;
+    }
 }
 @media(max-width:768px) {
     .backImg {
@@ -260,12 +263,6 @@
 }
 @media(min-width:1480px) {
     #divider {
-        top: 45vh;
-    }
-    .anim-appear #divider {
-        height: 0;
-    }
-    .anim-appear.anim-appear-active #divider {
-        height: 350px;
+        top: 30vh;
     }
 }

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {Col} from 'react-bootstrap';
-import { Link, history} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import arrow from '../../assets/img/arrow-next.svg';
+import arrow from '../../assets/img/arrow_next_min.svg';
 
 let cantina = {
     header:  'Cantina',

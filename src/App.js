@@ -4,7 +4,7 @@ import MainPage from './components/MainPage';
 import Tacos from './components/Tacos';
 import Cantina from './components/Cantina';
 import Footer from './components/footer';
-
+import './webkit.css';
 const cw = window.innerWidth;
 class App extends Component {
 

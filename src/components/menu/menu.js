@@ -13,12 +13,16 @@ class Menu extends Component {
     };
 
 toggleMenu = (a) => {
-    this.setState({ items: [] });
-    let that = this;
-    setTimeout(function(){
-        that.state.menu === 'set' ? that.setState({ menu: 'weekend' }) : that.setState({ menu: 'set' });
-        that.state.menu === 'set' ? that.setState({ items: Content.weekend }) : that.setState({ items: Content.set });
-    }, 200);
+    if (a === this.state.menu){
+        this.setState({ items: [] });
+        let that = this;
+        setTimeout(function(){
+            that.state.menu === 'set' ? that.setState({ menu: 'weekend' }) : that.setState({ menu: 'set' });
+            that.state.menu === 'set' ? that.setState({ items: Content.weekend }) : that.setState({ items: Content.set });
+        }, 200);
+    } else {
+        return;
+    }
 }
 
     render() {
@@ -28,9 +32,9 @@ toggleMenu = (a) => {
         return <>
             <div className="wrapper d-flex text-block">
                     <h2 className="text-center menuTitle">Set menu</h2>
-                    <Row className={"mx-auto w-100 menuSubtitle " + (this.state.menu === 'set' ? 'set' : 'weekend')} style={{justifyContent: 'center'}}>
-                        <p className="menu-toggle set" onClick={ () => this.toggleMenu() }>set menu</p>
-                        <p className="menu-toggle weekend" onClick={ () => this.toggleMenu() }>weekend menu</p>
+                    <Row className={"mx-auto w-100 menuSubtitle " + (this.state.menu === 'set' ? 'set' : 'weekend')} style={{justifyContent: 'center', position:'relative'}}>
+                        <p className="menu-toggle set" onClick={ () => this.toggleMenu('set') }>set menu</p>
+                        <p className="menu-toggle weekend" onClick={ () => this.toggleMenu('weekend') }>weekend menu</p>
                     </Row>
                     <Row>
                         <Col md={10} className="mx-auto px-sm-0">
@@ -40,8 +44,8 @@ toggleMenu = (a) => {
                                         transitionAppear = { false }
                                         transitionEnter = { true }
                                         transitionLeave = { true }
-                                        transitionEnterTimeout = { 100 }
-                                        transitionLeaveTimeout = { 100 }
+                                        transitionEnterTimeout = { 200 }
+                                        transitionLeaveTimeout = { 300 }
                                     >
                                 { (this.state.items).map((item, index) =>
                                     <Item menu = { this.state.menu } item = { item } key = { this.state.menu + index } />
