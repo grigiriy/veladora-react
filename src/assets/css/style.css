@@ -82,16 +82,6 @@ p {
         display: none!important;
     }
 }
-/* @media(min-width:1064px) and (max-width:1430px){
-    h1, .h1{
-        font-size: 58px;
-        padding: 20px 0;
-    }
-    p{
-        font-size: 18px;
-        line-height: 1.3;
-    }
-} */
 @media(min-width:769px) and (max-width:1024px){
     h1, .h1{
         font-size: 48px;
@@ -114,7 +104,6 @@ p {
     }
 }
 .screen {
-    /* min-height: calc(100vh - 60px); */
     min-height: 100vh;
 }
 a:hover {
